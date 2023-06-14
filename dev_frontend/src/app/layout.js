@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import "@/fonts/fonts.css"
 
 import { Inter } from "next/font/google";
  
@@ -15,8 +16,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div>check</div>
+      <body className="root">
+        {/* <div>check</div> */}
     {children}
       </body>
     </html>

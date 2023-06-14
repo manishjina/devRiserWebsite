@@ -1,6 +1,6 @@
 
 'use client'
 
-const { Box} =  require ("@mui/material")
+const { Box,Button} =  require ("@mui/material")
 
-export {Box}
+export {Box,Button}
