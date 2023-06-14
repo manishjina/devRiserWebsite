@@ -1,0 +1,43 @@
+<svg width="68" height="67" viewBox="0 0 68 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.667 44V2C19.667 1.44772 20.1147 1 20.667 1H48.0003C48.5526 1 49.0003 1.44772 49.0003 2V44" stroke="white" stroke-width="2"/>
+<path d="M49 18.332H66C66.5523 18.332 67 18.7797 67 19.332V57.6654C67 58.2176 66.5523 58.6654 66 58.6654H64.3333" stroke="white" stroke-width="2"/>
+<path d="M19 18.332H2C1.44772 18.332 0.999999 18.7797 0.999999 19.332V57.6654C0.999999 58.2176 1.44771 58.6654 2 58.6654H3.66667" stroke="white" stroke-width="2"/>
+<rect x="27.5" y="5.5" width="14.3333" height="8.33333" rx="2.5" stroke="white"/>
+<path d="M7 26.332V43.332" stroke="white" stroke-width="2"/>
+<path d="M13.667 26.332V43.332" stroke="white" stroke-width="2"/>
+<path d="M55 26.332V43.332" stroke="white" stroke-width="2"/>
+<path d="M61.667 26.332V43.332" stroke="white" stroke-width="2"/>
+<circle cx="34.3333" cy="45.6654" r="4.33333" stroke="white" stroke-width="2"/>
+<circle cx="47.3337" cy="47.9987" r="2.66667" stroke="white" stroke-width="2"/>
+<circle cx="57.9997" cy="51.3346" r="2.66667" stroke="white" stroke-width="2"/>
+<circle cx="21.3337" cy="47.9987" r="2.66667" stroke="white" stroke-width="2"/>
+<circle cx="10.6667" cy="51.3346" r="2.66667" stroke="white" stroke-width="2"/>
+<path d="M40.6667 57.6654V65.9987H28V57.6654C28 54.1676 30.8355 51.332 34.3333 51.332C37.8311 51.332 40.6667 54.1676 40.6667 57.6654Z" stroke="white" stroke-width="2"/>
+<path d="M52 57.668V66.0013H42V57.668C42 54.9065 44.2386 52.668 47 52.668C49.7614 52.668 52 54.9065 52 57.668Z" stroke="white" stroke-width="2"/>
+<path d="M63.333 60.332V65.9987H53.333V60.332C53.333 57.5706 55.5716 55.332 58.333 55.332C61.0944 55.332 63.333 57.5706 63.333 60.332Z" stroke="white" stroke-width="2"/>
+<path d="M26.667 57.668V66.0013H16.667V57.668C16.667 54.9065 18.9056 52.668 21.667 52.668C24.4284 52.668 26.667 54.9065 26.667 57.668Z" stroke="white" stroke-width="2"/>
+<path d="M15.333 60.332V65.9987H5.33301V60.332C5.33301 57.5706 7.57158 55.332 10.333 55.332C13.0944 55.332 15.333 57.5706 15.333 60.332Z" stroke="white" stroke-width="2"/>
+<rect x="29" y="18.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="24.333" y="22.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="29" y="22.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="33.667" y="22.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="38.333" y="22.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="43" y="22.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="24.333" y="27" width="2" height="2" fill="#FFF7F7"/>
+<rect x="29" y="27" width="2" height="2" fill="#FFF7F7"/>
+<rect x="33.667" y="27" width="2" height="2" fill="#FFF7F7"/>
+<rect x="38.333" y="27" width="2" height="2" fill="#FFF7F7"/>
+<rect x="43" y="27" width="2" height="2" fill="#FFF7F7"/>
+<rect x="24.333" y="31.668" width="2" height="2" fill="#FFF7F7"/>
+<rect x="29" y="31.668" width="2" height="2" fill="#FFF7F7"/>
+<rect x="33.667" y="31.668" width="2" height="2" fill="#FFF7F7"/>
+<rect x="38.333" y="31.668" width="2" height="2" fill="#FFF7F7"/>
+<rect x="43" y="31.668" width="2" height="2" fill="#FFF7F7"/>
+<rect x="24.333" y="36.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="29" y="36.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="33.667" y="36.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="38.333" y="36.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="43" y="36.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="33.667" y="18.332" width="2" height="2" fill="#FFF7F7"/>
+<rect x="38.333" y="18.332" width="2" height="2" fill="#FFF7F7"/>
+</svg>
