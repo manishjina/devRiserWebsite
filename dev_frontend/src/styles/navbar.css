@@ -1,0 +1,288 @@
+.navbar {
+  position: absolute;
+  width: 82px;
+  height: calc(100vh);
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.23) 0%,
+    rgba(70, 70, 70, 0.115) 100%
+  );
+  backdrop-filter: blur(calc(37.5px * (1024 / 893)));
+}
+
+.nav-item {
+  position: absolute;
+  width: 35px;
+  height: 33px;
+  left: calc(50% - 35px / 2 - 0.5px);
+}
+
+.nav-item1 {
+  top: calc(2vh + 10px);
+}
+
+.nav-item2 {
+  top: calc(25px + 10.5vh);
+}
+
+.nav-item3 {
+  top: calc(40px + 19vh);
+}
+
+.nav-item4 {
+  top: calc(55px + 27.5vh);
+}
+
+.nav-item5 {
+  top: calc(70px + 36vh);
+}
+
+.nav-item6 {
+  top: calc(85px + 44.5vh);
+}
+
+.nav-item7 {
+  bottom: calc(25px + 6vh);
+}
+
+.nav-item8 {
+  bottom: calc(10px);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 834px) {
+  .navbar {
+    position: absolute;
+    width: 100vw;
+    height: 84px;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.23) 0%,
+      rgba(70, 70, 70, 0.115) 100%
+    );
+    backdrop-filter: blur(37.5px);
+  }
+
+  .nav-item {
+    position: absolute;
+    width: 35px;
+    height: 33px;
+    /* top: calc(50% - 35px / 2 - 0.5px); */
+    /* display: none; */
+  }
+
+  .nav-item1 {
+    top: 26px;
+    left: calc(10vh);
+    /* display: none; */
+  }
+
+  .nav-item2 {
+    top: calc(25px + 10.5vh);
+    display: none;
+  }
+
+  .nav-item3 {
+    top: calc(40px + 19vh);
+    display: none;
+  }
+
+  .nav-item4 {
+    top: calc(55px + 27.5vh);
+    display: none;
+  }
+
+  .nav-item5 {
+    top: calc(70px + 36vh);
+    display: none;
+  }
+
+  .nav-item6 {
+    top: calc(85px + 44.5vh);
+    display: none;
+  }
+
+  .nav-item7 {
+    bottom: calc(25px + 6vh);
+    display: none;
+  }
+
+  .nav-item8 {
+    bottom: calc(10px);
+    display: none;
+  }
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 31px;
+    left: 88vw;
+    top: 30px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .navbar {
+    position: absolute;
+    width: 100vw;
+    height: 65px;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.23) 0%,
+      rgba(70, 70, 70, 0.115) 100%
+    );
+    backdrop-filter: blur(37.5px);
+  }
+
+  .nav-item {
+    position: absolute;
+    width: 35px;
+    height: 33px;
+    top: calc(50% - 35px / 2 - 0.5px);
+    /* display: none; */
+  }
+
+  .nav-item1 {
+    top: 15px;
+    left: 46vw;
+    display: block;
+  }
+
+  .nav-item2 {
+    top: calc(25px + 10.5vh);
+    display: none;
+  }
+
+  .nav-item3 {
+    top: calc(40px + 19vh);
+    display: none;
+  }
+
+  .nav-item4 {
+    top: calc(55px + 27.5vh);
+    display: none;
+  }
+
+  .nav-item5 {
+    top: calc(70px + 36vh);
+    display: none;
+  }
+
+  .nav-item6 {
+    top: calc(85px + 44.5vh);
+    display: none;
+  }
+
+  .nav-item7 {
+    bottom: calc(25px + 6vh);
+    display: none;
+  }
+
+  .nav-item8 {
+    top: 15px;
+    left: 85vw;
+    display: block;
+  }
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 31px;
+    left: 5vw;
+    top: 20px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar {
+    position: absolute;
+    width: 100vw;
+    height: 52px;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.23) 0%,
+      rgba(70, 70, 70, 0.115) 100%
+    );
+    backdrop-filter: blur(37.5px);
+  }
+
+  .nav-item {
+    position: absolute;
+    /* width: 35px;
+    height: 33px; */
+    /* display: none; */
+  }
+
+  .nav-item1 {
+    top: 15px;
+    left: 46vw;
+    height: 22px;
+    width: 23px;
+    display: block;
+  }
+
+  .nav-item2 {
+    top: calc(25px + 10.5vh);
+    display: none;
+  }
+
+  .nav-item3 {
+    top: calc(40px + 19vh);
+    display: none;
+  }
+
+  .nav-item4 {
+    top: calc(55px + 27.5vh);
+    display: none;
+  }
+
+  .nav-item5 {
+    top: calc(70px + 36vh);
+    display: none;
+  }
+
+  .nav-item6 {
+    top: calc(85px + 44.5vh);
+    display: none;
+  }
+
+  .nav-item7 {
+    bottom: calc(25px + 6vh);
+    display: none;
+  }
+
+  .nav-item8 {
+    top: 15px;
+    left: 76vw;
+    /* height: 27px;
+    width: 66px; */
+    display: block;
+  }
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    height: 27px;
+    width: 21px;
+    left: 4vw;
+    top: 20px;
+  }
+}
+
