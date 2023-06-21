@@ -1,7 +1,7 @@
 "use client";
 import Navbar from "../components/Navbar";
 import "./globals.css";
-// import "@/fonts/fonts.css"
+import "../fonts/fonts.css"
 
 import { Inter } from "next/font/google";
 
