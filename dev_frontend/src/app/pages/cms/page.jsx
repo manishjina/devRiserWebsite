@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import "./cms.css";
-import { Button,Box, Grid } from "../../../utils/custom";
+import { Button,Box, Grid} from "../../../utils/custom";
+import Image from "next/image";
+import darkIllustration from '../../../assets/illustration/laptopdarkillustration.png'
 export default function Cms() {
   return (
+    <div className="container">
     <div className="main-container">
       <div className="cms-container">
         <div className="cms-container-box1">
@@ -20,12 +23,15 @@ export default function Cms() {
               website's creation, ensuring a seamless and dynamic online
               presence that maximizes your website's potential
             </p>
-          </div>
-          <div className="cms-container-box1-child2"></div>
-        </div>
-        <div>
+            <div>
           <Button className="cms-container-box1-btn">Let's Begin</Button>
         </div>
+          </div>
+          <div className="cms-container-box1-child2">
+            <Image src={darkIllustration}/>
+          </div>
+        </div>
+       
       </div>
 
       <div className="cms-container-box2">
@@ -161,6 +167,7 @@ export default function Cms() {
     </Grid>
   </Box>
         </div>
+      </div>
       </div>
     </div>
   );
