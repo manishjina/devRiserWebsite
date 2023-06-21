@@ -37,7 +37,7 @@
   /* border: 1px solid green; */
 }
 
-.navbar-child2-subchild1{
+/* .navbar-child2-subchild1{
  border: 1px solid rgba(255, 255, 255, 0.22); 
 height: 60px;
 width: 40px;
@@ -45,7 +45,7 @@ border-radius: 50%;
 cursor: pointer;
   padding: 0px;
   box-sizing: border-box;
-}
+} */
 .navbar-child2-subchild2{
   border: 1px solid rgba(255, 255, 255, 0.22); 
   color: #FFFFFF;
