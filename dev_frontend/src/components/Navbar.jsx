@@ -1,4 +1,6 @@
 "use client";
+
+import Image from "next/image";
 import React from "react";
 import Image from "next/image";
 
@@ -21,40 +23,49 @@ import Solutions_D from "assets/navbar/dark/Solutions.png";
 import Blogs_D from "assets/navbar/dark/Blogs.png";
 import Dark from "assets/navbar/dark/Dark.png";
 
+import {Button} from "../utils/custom"
+
 const Navbar = () => {
   return (
     <>
       <nav className="navbar">
         <div className="navbar-child1">
-          <div className="navbar-child1-subchild">
-            <Image src={Home} />
+
+          <div className="navbar-child1-subchild" style={{marginBottom:'20px'}}>
+          <Image src={Home}/>
+          
           </div>
           <div className="navbar-child1-subchild">
-            <Image src={Service} />
+          <Image src={Service}/>
+            <p>Service</p>
           </div>
           <div className="navbar-child1-subchild">
-            <Image src={Solutions} />
+          <Image src={Solutions}/>
+            <p>Solution</p>
           </div>
           <div className="navbar-child1-subchild">
-            <Image src={Blogs} />
+          <Image src={Blogs}/>
+            <p>Blog</p>
           </div>
           <div className="navbar-child1-subchild">
-            <Image src={AboutUs} />
+          <Image src={AboutUs}/>
+            <p>About us</p>
           </div>
           <div className="navbar-child1-subchild">
-            <Image src={ContactUs} />
+          <Image src={ContactUs}/>
+            <p>Contact us</p>
           </div>
         </div>
-        <div className="navbar-child2">
-          <Button className="navbar-child2-subchild1">
-            <Image src={Light} />
-          </Button>
-          <Button
-            sx={{ textTansformation: "none" }}
-            className="navbar-child2-subchild2"
-          >
+
+        <div className="navbar-child2" >
+         <div>
+           <Image src={Light}/>
+           </div>
+        <div>
+          <Button  className="navbar-child2-subchild2">
             Eng
           </Button>
+          </div>
           {/* <div className="nav-item hamburger">H</div> */}
         </div>
       </nav>
