@@ -1,40 +1,70 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./cms.css";
-import { Button, } from "../../../utils/custom";
+import { Button } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
 import Carousel from "components/Carousel";
-import Avatar from "../../../assets/illustration/Avatar.png"
-import { ourProcessDataBlack,ourProcessDataWhite } from "./cmsdata";
+import Avatar from "../../../assets/illustration/Avatar.png";
+import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
 import Faq from "components/Faq";
-export default function Cms() {
-  const [contentData,setContent]=useState(ourProcessDataBlack[0].content)
-  const [contentImg,setContentImg]=useState(ourProcessDataBlack[0].img)
-  const [btnColor,setBtnColour]=useState(0)
+import { useGlobalContext } from "app/components/common/store";
 
-  const content=[
-   "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
-   "I Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
-   "I hate the simplicity of the service and the prompt customer support. We can’t imagine working without it."
-  ]
+export default function Cms() {
+  const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
+  const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
+  const [btnColor, setBtnColour] = useState(0);
+  const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
+
+  console.log(theme, "toggleTheem");
+
+  const content = [
+    "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
+    "I Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+    "I hate the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+  ];
+
+  const photo = [Avatar, Avatar, Avatar];
+  const name = ["Kelly Williams", "Melly Williams", "Selly Williams"];
+  const desc = [
+    "Head of Design, Layers",
+    "SubHead of Design, Layers",
+    "Master of Design, Layers",
+  ];
+  // const [toggleClassname, setToggleClassName] = useState("dark_theme");
+
+  // useEffect(() => {
+  //   if (theme) {
+  //     setToggleClassName("bright_theme");
+  //   } else {
+  //     setToggleClassName("dark_theme");
+  //   }
+  // }, [theme]);
+
+  const dark_style = {
   
-  const photo=[Avatar,Avatar,Avatar]
-  const name=["Kelly Williams","Melly Williams","Selly Williams"]
-  const desc=["Head of Design, Layers","SubHead of Design, Layers","Master of Design, Layers"]
-  const handleSixbtn=(ele,id)=>{
+    backgroundColor: "red",
   
-      setBtnColour(ele.id)
-  
-          setContent(ele.content)
-          setContentImg(ele.img)
-       
-  }
+  };
+  const bright_style = {
+   
+    backgroundColor: "blue",
+    
+  };
+
+  const handleSixbtn = (ele, id) => {
+    setBtnColour(ele.id);
+    setContent(ele.content);
+    setContentImg(ele.img);
+  };
 
   return (
-    <div className="container">
+    <div
+      className={"container"}
+      onClick={() => setShowSidebar((prev) => !prev)}
+    >
       <div className="main-container">
-        <div className="cms-container">
+        <div className={`cms-container`} >
           <div className="cms-container-box1">
             <div className="cms-container-box1-child1">
               <h2 className="cms-container-box1-child1-text1">
@@ -140,21 +170,32 @@ export default function Cms() {
 
         <div className="cms-container-box5">
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
-<div>
-
-          <div className="cms-container-box5-boxbtn">
-            {ourProcessDataBlack.map((ele)=>{
-              return  <Button style={{backgroundColor:btnColor==ele.id?"#E77BA6":'',backgroundImage:btnColor==ele.id?"none":''}}  className="cms-container-box5-boxbtn-btn" onClick={()=>handleSixbtn(ele,ele.id)} key={ele.id}>{ele.btnName}</Button>
-            })}
-           
-           
-          </div>
-          <div className="cms-container-box5-card">
-            <Image className="cms-container-box5-card-img" src={contentImg} alt="logo-fault" />
-            <p className="cms-container-box5-card-text">
-              {contentData}
-            </p>
-          </div>
+          <div>
+            <div className="cms-container-box5-boxbtn">
+              {ourProcessDataBlack.map((ele) => {
+                return (
+                  <Button
+                    style={{
+                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "",
+                      backgroundImage: btnColor == ele.id ? "none" : "",
+                    }}
+                    className="cms-container-box5-boxbtn-btn"
+                    onClick={() => handleSixbtn(ele, ele.id)}
+                    key={ele.id}
+                  >
+                    {ele.btnName}
+                  </Button>
+                );
+              })}
+            </div>
+            <div className="cms-container-box5-card">
+              <Image
+                className="cms-container-box5-card-img"
+                src={contentImg}
+                alt="logo-fault"
+              />
+              <p className="cms-container-box5-card-text">{contentData}</p>
+            </div>
           </div>
         </div>
 
@@ -352,7 +393,10 @@ export default function Cms() {
         </div>
 
         <div className="cms-container-box9">
-          <h2 className="cms-container-box9-child1"> What<span className="text-color"> People Say </span>About Us</h2>
+          <h2 className="cms-container-box9-child1">
+            {" "}
+            What<span className="text-color"> People Say </span>About Us
+          </h2>
           <div className="cms-container-box9-child2">
             <Carousel content={content} photo={photo} name={name} desc={desc} />
           </div>
@@ -451,16 +495,20 @@ export default function Cms() {
         </div>
 
         <div className="cms-container-box12">
-          <h2 className="cms-container-box12-text">Let's Build Your Dream Website</h2>
+          <h2 className="cms-container-box12-text">
+            Let's Build Your Dream Website
+          </h2>
           <Button className="cms-container-box12-btn">Get in touch</Button>
         </div>
 
         <div className="cms-container-box13">
-         <h2 className="cms-container-box13-child1">Frequently <span className="text-color">Asked</span> Questions</h2>
-          
+          <h2 className="cms-container-box13-child1">
+            Frequently <span className="text-color">Asked</span> Questions
+          </h2>
+
           <div className="cms-container-box13-child2">
-          <Faq />
-            </div>
+            <Faq />
+          </div>
         </div>
       </div>
     </div>
