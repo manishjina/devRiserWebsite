@@ -1,7 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-const Carousel = ({ photo=[1,2,3],content,name=[1,2,3],desc=[1,2,3] }) => {
+import "../styles/Carousel.css"
+import StarImg from "../assets/illustration/Star.png"
+const Carousel = ({ photo,content,name,desc }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [currentNameIndex, setCurrentNameIndex] = useState(0);
@@ -23,14 +25,19 @@ const Carousel = ({ photo=[1,2,3],content,name=[1,2,3],desc=[1,2,3] }) => {
   }, [photo,name,content,desc]);
 
   return (
-  <div>
-    <h1>{content[currentContentIndex]}</h1>
-    <Image src={photo[currentImageIndex]} alt="Carousel Image" />;
-    <p>{name[currentNameIndex]}</p>
-    <p>{desc[currentDescIndex]}</p>
-    <div>
-      {/* <Image src={Photo} /> */}
-    </div>
+  <div className='Carousal-box' >
+    <h2  className='Carousal-box-content'>{content[currentContentIndex]}</h2>
+    <Image className='Carousal-box-img' src={photo[currentImageIndex]} alt="Carousel Image" />;
+    <p className='Carousal-box-name'>{name[currentNameIndex]}</p>
+    <p className='Carousal-box-desc'>{desc[currentDescIndex]}</p>
+        <div style={{marginTop:'5px'}}>
+          <Image src={ StarImg} />
+          <Image src={ StarImg} />
+          <Image src={ StarImg} />
+          <Image src={ StarImg} />
+          <Image  src={ StarImg} />
+
+        </div>
     </div>
   )
 };
