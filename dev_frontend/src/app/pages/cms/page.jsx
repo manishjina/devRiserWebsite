@@ -5,7 +5,9 @@ import { Button, Box, Grid } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
 import Carousel from "components/Carousel";
+import Avatar from "../../../assets/illustration/Avatar.png"
 import { ourProcessDataBlack,ourProcessDataWhite } from "./cmsdata";
+import Faq from "components/Faq";
 export default function Cms() {
   const [contentData,setContent]=useState(ourProcessDataBlack[0].content)
   const [contentImg,setContentImg]=useState(ourProcessDataBlack[0].img)
@@ -17,6 +19,9 @@ export default function Cms() {
    "I hate the simplicity of the service and the prompt customer support. We can’t imagine working without it."
   ]
   
+  const photo=[Avatar,Avatar,Avatar]
+  const name=["Kelly Williams","Melly Williams","Selly Williams"]
+  const desc=["Head of Design, Layers","SubHead of Design, Layers","Master of Design, Layers"]
   const handleSixbtn=(ele,id)=>{
   
       setBtnColour(ele.id)
@@ -145,8 +150,8 @@ export default function Cms() {
            
           </div>
           <div className="cms-container-box5-card">
-            <Image src={contentImg} alt="logo-fault" />
-            <p>
+            <Image className="cms-container-box5-card-img" src={contentImg} alt="logo-fault" />
+            <p className="cms-container-box5-card-text">
               {contentData}
             </p>
           </div>
@@ -349,7 +354,7 @@ export default function Cms() {
         <div className="cms-container-box9">
           <h2 className="cms-container-box9-child1"> What<span className="text-color"> People Say </span>About Us</h2>
           <div className="cms-container-box9-child2">
-            <Carousel content={content} />
+            <Carousel content={content} photo={photo} name={name} desc={desc} />
           </div>
         </div>
 
@@ -448,6 +453,14 @@ export default function Cms() {
         <div className="cms-container-box12">
           <h2 className="cms-container-box12-text">Let's Build Your Dream Website</h2>
           <Button className="cms-container-box12-btn">Get in touch</Button>
+        </div>
+
+        <div className="cms-container-box13">
+         <h2 className="cms-container-box13-child1">Frequently <span className="text-color">Asked</span> Questions</h2>
+          
+          <div className="cms-container-box13-child2">
+          <Faq />
+            </div>
         </div>
       </div>
     </div>
