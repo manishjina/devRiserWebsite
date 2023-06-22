@@ -35,10 +35,9 @@
   border-radius: 6px;
 }
 .navbar-child1-subchild:hover{
-  background: rgba(255, 255, 255, 0.2);
+
   cursor: pointer;
-
-
+  background: rgba(255, 255, 255, 0.2);
 }
 .navbar-child1-subchild-text{
   font-weight: 400;
@@ -48,10 +47,14 @@
   line-height: 12px;
 
 }
-#globalLogo:hover{
+#devlogo:hover{
   background: none;
 
 }
+#devlogo{
+  background: none;
+}
+
 .navbar-child2{
   display: flex;
   flex-direction: column;
@@ -60,6 +63,7 @@
   gap:20px;
 
 }
+
 
 .navbar-child1-subchild-img{
   cursor: pointer;
@@ -74,9 +78,10 @@
   display: none;
   cursor: pointer;
 }
+.main-navbar-container{}
 
 .navbar2-show{
-  position: fixed;
+ position: fixed;
   padding:0px 6px 0px 6px;
  height: calc(100vh);
  width: 200px;
@@ -97,5 +102,17 @@ border-left:0.5px solid #E8E8E8;
 z-index: 1;
 }
 .navbar2-hide{
-  display: block;
+  display: none;
+}
+
+.mainContainer-navbar2-show{
+  border:1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 5%;
+}
+.navbar2-show-content:hover{
+  background-color: aqua;
 }
