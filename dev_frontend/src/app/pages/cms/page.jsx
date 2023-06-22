@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./cms.css";
-import { Button, Box, Grid } from "../../../utils/custom";
+import { Button, } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
 import Carousel from "components/Carousel";
