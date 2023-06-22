@@ -140,7 +140,7 @@ export default function Cms() {
 
         <div className="cms-container-box5">
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
-<div>
+<div >
 
           <div className="cms-container-box5-boxbtn">
             {ourProcessDataBlack.map((ele)=>{
@@ -157,7 +157,7 @@ export default function Cms() {
           </div>
           </div>
         </div>
-
+<div className="box6-Gredeint-color">
         <div className="cms-container-box6">
           <div className="cms-container-box6-child1">
             <h2>Types Of Websites We Create With CMS</h2>
@@ -194,6 +194,7 @@ export default function Cms() {
               </p>
             </div>
           </div>
+        </div>
         </div>
         <div className="cms-container-box7">
           <h2 className="cms-container-box7-text">

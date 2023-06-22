@@ -15,7 +15,10 @@ import { Typography } from "@mui/material";
 import usa from "../assets/navbar/FlagImg/usaflagimg.png";
 import china from "../assets/navbar/FlagImg/chinaflagimg.png";
 import france from "../assets/navbar/FlagImg/franceflagimg.png";
+import arabic from "../assets/navbar/FlagImg/arabic.png";
+
 import { useRouter } from 'next/navigation'
+import Link from "next/link";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -28,7 +31,7 @@ const Navbar = () => {
     { id: 0, name: "", icon: DevriserLogo, content: [] },
     {
       id: 1,
-      name: "services",
+      name: "Services",
       icon: Service,
       content: [
         {id:9,routeName:"WebDevlopment",routePath:"/pages/webdevlopment"},
@@ -40,9 +43,9 @@ const Navbar = () => {
         {id:14,routeName:"Enterprise Solution",routePath:"/pages/enterprisesolution"},
       ],
     },
-    { id: 2, name: "solutions", icon: Solution, content: [] },
+    { id: 2, name: "Solutions", icon: Solution, content: [] },
     { id: 3, name: "Blog", icon: Blog, content: [] },
-    { id: 4, name: "contacts", icon: Contact, content: [] },
+    { id: 4, name: "Contact", icon: Contact, content: [] },
     { id: 5, name: "About Us", icon: About, content: [] },
   ];
 
@@ -56,35 +59,35 @@ const Navbar = () => {
   };
   const languageFlagArr = [
     {
+      id: 3,
+      flagImg: usa,
+      country: "English",
+    },
+    {
       id: 1,
       flagImg: france,
-      country: "France",
+      country: "Français",
     },
     {
       id: 2,
       flagImg: china,
-      country: "China",
+      country: "中文",
     },
+   
     {
-      id: 3,
-      flagImg: usa,
-      country: "USA",
-    },
+      id:4,
+      flagImg:arabic,
+      country:'العربية'
+    }
   ];
   const handelLanguageTag = () => {
     setLanguageTag(true);
   };
-const router=useRouter()
-  const handelNavigate=(elm)=>{
- setNavigatePage(elm)
-    if(elm===navigatePage){
-      router.push(elm)
-    }
-  }
+
 
   return (
     <>
-      <div className="main-navbar-container">
+      <div className="main-navbar-container" >
         <nav className="navbar">
           <div className="navbar-child1">
             {navArr.map((elm) => {
@@ -129,19 +132,21 @@ const router=useRouter()
             <div className="mainContainer-navbar2-show">
               {sideBarContent.map((elm, i) => {
                 return (
-                  <div key={i} onClick={()=>handelNavigate(elm.routePath)}  className="navbar2-show-content">
-                    <Typography   >{elm.routeName}</Typography>
+                  <div key={i}   className="navbar2-show-content">
+                   <Link  href={elm.routePath}  >{elm.routeName}</Link>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <div className="mainContainer-navbar2-show">
+            <div className="mainContainer-navbar2-show-language">
+            
               {languageFlagArr.map((elm) => {
                 return (
                   <div
                     key={elm.id}
-                    style={{ display: "flex", border: "1px solid red" }}
+                    className="navbar2-show-content-language"
+                    
                   >
                     <Image src={elm.flagImg} />
                     <Typography>{elm.country}</Typography>
