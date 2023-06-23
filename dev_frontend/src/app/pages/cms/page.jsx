@@ -36,11 +36,34 @@ export default function Cms() {
     setContent(ele.content);
     setContentImg(ele.img);
   };
+  const [gradientPositions, setGradientPositions] = useState([
+    { x: null, y: null },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+  ]);
+
+  const handleMouseMove = (index, event) => {
+    const rect = event.target.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const gradientX = (mouseX / rect.width) * 100;
+    const gradientY = (mouseY / rect.height) * 100;
+
+    setGradientPositions((prevState) => {
+      const updatedPositions = [...prevState];
+      updatedPositions[index] = { x: gradientX, y: gradientY };
+      return updatedPositions;
+    });
+  };
 
   return (
     <div className="container" onClick={() => setShowSidebar(false)}>
       <div className="main-container">
-        <div className="_hero-section-container">
+        <div
+          className="_hero-section-container"
+        
+        >
           <div className="_hero-section-container-primary">
             <div className="_hero-section-container-primary-child1">
               <h2 className="_hero-section-container-primary-child1-text1">
@@ -56,7 +79,9 @@ export default function Cms() {
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn">Let's Begin</Button>
+                <Button className="_hero-section-container-primary-btn">
+                  Let's Begin
+                </Button>
               </div>
             </div>
             <div className="_hero-section-container-primary-child2">
@@ -86,9 +111,9 @@ export default function Cms() {
         </div>
 
         <div className="_grid-four-card">
-          <div className="_grid-four-card-child" >
-            <h2 className="_grid-four-card-child-subchild1" >Time-Efficient</h2>
-            <p className="_grid-four-card-child-subchild2" >
+          <div className="_grid-four-card-child">
+            <h2 className="_grid-four-card-child-subchild1">Time-Efficient</h2>
+            <p className="_grid-four-card-child-subchild2">
               Our team specializes in creating user-friendly CMS websites that
               are easy to manage. We harness the power of CMS platforms to
               accelerate the website creation process, allowing you to have a
@@ -96,9 +121,9 @@ export default function Cms() {
               traditional code-based methods
             </p>
           </div>
-          <div className="_grid-four-card-child" >
-            <h2 className="_grid-four-card-child-subchild1" > Cost-Effective</h2>
-            <p className="_grid-four-card-child-subchild2" >
+          <div className="_grid-four-card-child">
+            <h2 className="_grid-four-card-child-subchild1"> Cost-Effective</h2>
+            <p className="_grid-four-card-child-subchild2">
               Unlock business growth without compromising quality with our
               cost-conscious CMS web development services. Enjoy a high-quality,
               feature-rich website that fits your budget, delivering financial
@@ -106,9 +131,12 @@ export default function Cms() {
               development and maximize your business's potential
             </p>
           </div>
-          <div className="_grid-four-card-child" >
-            <h2 className="_grid-four-card-child-subchild1" > Responsive Design</h2>
-            <p className="_grid-four-card-child-subchild2" >
+          <div className="_grid-four-card-child">
+            <h2 className="_grid-four-card-child-subchild1">
+              {" "}
+              Responsive Design
+            </h2>
+            <p className="_grid-four-card-child-subchild2">
               adapt to all devices, ensuring exceptional user experiences.
               Through responsive design, we optimize layouts and functionality
               for optimal viewing and interaction. Experience effortless
@@ -116,9 +144,9 @@ export default function Cms() {
               mobiles to tablets{" "}
             </p>
           </div>
-          <div className="_grid-four-card-child" >
-            <h2 className="_grid-four-card-child-subchild1" >Easy to manage</h2>
-            <p className="_grid-four-card-child-subchild2" >
+          <div className="_grid-four-card-child">
+            <h2 className="_grid-four-card-child-subchild1">Easy to manage</h2>
+            <p className="_grid-four-card-child-subchild2">
               Simplify website management with our user-friendly interfaces. Our
               expertly crafted websites eliminate complexities, empowering you
               to effortlessly update and maintain your online presence.
@@ -127,6 +155,7 @@ export default function Cms() {
             </p>
           </div>
         </div>
+
         <div className="_primary-long-card">
           <h2 className="_primary-long-card-text1">
             Exquisite Precision Crafted By Our CMS Experts
@@ -492,5 +521,3 @@ export default function Cms() {
     </div>
   );
 }
-
-//
