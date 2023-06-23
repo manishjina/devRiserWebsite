@@ -49,15 +49,15 @@ const router=useRouter()
   } = useGlobalContext();
 
   const navArr = [
-    { id: 0, name: "", icon:theme?DevriserLogo:devriser_logo_light, content: [] },
+    { id: 0, name: "", icon:!theme?DevriserLogo:devriser_logo_light, content: [] },
     {
       id: 1,
       name: "Services",
-      icon:theme? Service:services_light,
+      icon:!theme? Service:services_light,
       content: [
         {
           id: 9,
-          routeName: "WebDevlopment",
+          routeName: "Web Devlopment",
           routePath: "/pages/webdevelopment",
         },
         {
@@ -76,10 +76,10 @@ const router=useRouter()
         },
       ],
     },
-    { id: 2, name: "Solutions", icon:theme? Solution:sol_light, content: [] },
-    { id: 3, name: "Blog", icon:theme? Blog:blog_light, content: [] },
-    { id: 4, name: "Contact", icon:theme? Contact:contact_light, content: [] },
-    { id: 5, name: "About Us", icon:theme? About:about_light, content: [] },
+    { id: 2, name: "Solutions", icon:!theme? Solution:sol_light, content: [] },
+    { id: 3, name: "Blog", icon:!theme? Blog:blog_light, content: [] },
+    { id: 4, name: "Contact", icon:!theme? Contact:contact_light, content: [] },
+    { id: 5, name: "About Us", icon:!theme? About:about_light, content: [] },
   ];
 
   const handleNavbarClick = (elm) => {
@@ -155,7 +155,7 @@ const router=useRouter()
               <Image
                 className="navbar-child1-subchild-img  "
           
-                src={theme?Light:light_icon}
+                src={!theme?Light:light_icon}
                 alt="themeToggle"
               />
             </div>
