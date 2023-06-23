@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./cms.css";
+
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
@@ -16,8 +17,6 @@ export default function Cms() {
   const [btnColor, setBtnColour] = useState(0);
   const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
 
-  console.log(theme, "toggleTheem");
-
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
     "I Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
@@ -31,48 +30,25 @@ export default function Cms() {
     "SubHead of Design, Layers",
     "Master of Design, Layers",
   ];
-  // const [toggleClassname, setToggleClassName] = useState("dark_theme");
-
-  // useEffect(() => {
-  //   if (theme) {
-  //     setToggleClassName("bright_theme");
-  //   } else {
-  //     setToggleClassName("dark_theme");
-  //   }
-  // }, [theme]);
-
-  const dark_style = {
-  
-    backgroundColor: "red",
-  
-  };
-  const bright_style = {
-   
-    backgroundColor: "blue",
-    
-  };
-
   const handleSixbtn = (ele, id) => {
     setBtnColour(ele.id);
+
     setContent(ele.content);
     setContentImg(ele.img);
   };
 
   return (
-    <div
-      className={"container"}
-      onClick={() => setShowSidebar((prev) => !prev)}
-    >
+    <div className="container" onClick={() => setShowSidebar(false)}>
       <div className="main-container">
-        <div className={`cms-container`} >
-          <div className="cms-container-box1">
-            <div className="cms-container-box1-child1">
-              <h2 className="cms-container-box1-child1-text1">
+        <div className="_hero-section-container">
+          <div className="_hero-section-container-primary">
+            <div className="_hero-section-container-primary-child1">
+              <h2 className="_hero-section-container-primary-child1-text1">
                 Advanced{" "}
                 <span className="text-color">CMS Development Services</span> For
                 Maximizing Your Website's Potential
               </h2>
-              <p className="cms-container-box1-child1-text2">
+              <p className="_hero-section-container-primary-child1-text2">
                 {" "}
                 We optimize the true power of your business with our advanced
                 CMS development services. Our CMS team handles every aspect of
@@ -80,23 +56,23 @@ export default function Cms() {
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="cms-container-box1-btn">Let's Begin</Button>
+                <Button className="_hero-section-container-primary-btn">Let's Begin</Button>
               </div>
             </div>
-            <div className="cms-container-box1-child2">
+            <div className="_hero-section-container-primary-child2">
               <Image src={darkIllustration} />
             </div>
           </div>
         </div>
 
-        <div className="cms-container-box2">
+        <div className="_secondry-section-container">
           <div>
-            <h2 className="cms-container-box2-text1">
+            <h2 className="_secondry-section-container-text1">
               Elevate Your Website Creation With Our Expert CMS Development
               Services
             </h2>
           </div>
-          <p className="cms-container-box2-text2">
+          <p className="_secondry-section-container-text2">
             Experience the power of website creation with our comprehensive CMS
             Development Services. Leveraging industry-leading platforms such as
             WordPress, Wix, Drupal, Webflow, and Shopify, we provide tailored
@@ -109,10 +85,10 @@ export default function Cms() {
           </p>
         </div>
 
-        <div className="cms-container-box3">
-          <div>
-            <h2>Time-Efficient</h2>
-            <p>
+        <div className="_grid-four-card">
+          <div className="_grid-four-card-child" >
+            <h2 className="_grid-four-card-child-subchild1" >Time-Efficient</h2>
+            <p className="_grid-four-card-child-subchild2" >
               Our team specializes in creating user-friendly CMS websites that
               are easy to manage. We harness the power of CMS platforms to
               accelerate the website creation process, allowing you to have a
@@ -120,9 +96,9 @@ export default function Cms() {
               traditional code-based methods
             </p>
           </div>
-          <div>
-            <h2> Cost-Effective</h2>
-            <p>
+          <div className="_grid-four-card-child" >
+            <h2 className="_grid-four-card-child-subchild1" > Cost-Effective</h2>
+            <p className="_grid-four-card-child-subchild2" >
               Unlock business growth without compromising quality with our
               cost-conscious CMS web development services. Enjoy a high-quality,
               feature-rich website that fits your budget, delivering financial
@@ -130,9 +106,9 @@ export default function Cms() {
               development and maximize your business's potential
             </p>
           </div>
-          <div>
-            <h2> Responsive Design</h2>
-            <p>
+          <div className="_grid-four-card-child" >
+            <h2 className="_grid-four-card-child-subchild1" > Responsive Design</h2>
+            <p className="_grid-four-card-child-subchild2" >
               adapt to all devices, ensuring exceptional user experiences.
               Through responsive design, we optimize layouts and functionality
               for optimal viewing and interaction. Experience effortless
@@ -140,9 +116,9 @@ export default function Cms() {
               mobiles to tablets{" "}
             </p>
           </div>
-          <div>
-            <h2>Easy to manage</h2>
-            <p>
+          <div className="_grid-four-card-child" >
+            <h2 className="_grid-four-card-child-subchild1" >Easy to manage</h2>
+            <p className="_grid-four-card-child-subchild2" >
               Simplify website management with our user-friendly interfaces. Our
               expertly crafted websites eliminate complexities, empowering you
               to effortlessly update and maintain your online presence.
@@ -151,11 +127,11 @@ export default function Cms() {
             </p>
           </div>
         </div>
-        <div className="cms-container-box4">
-          <h2 className="cms-container-box4-text1">
+        <div className="_primary-long-card">
+          <h2 className="_primary-long-card-text1">
             Exquisite Precision Crafted By Our CMS Experts
           </h2>
-          <p className="cms-container-box4-text2">
+          <p className="_primary-long-card-text2">
             {" "}
             Experience the art of website creation with our team of CMS experts
             who specialize in delivering customized websites that precisely
@@ -198,41 +174,42 @@ export default function Cms() {
             </div>
           </div>
         </div>
-
-        <div className="cms-container-box6">
-          <div className="cms-container-box6-child1">
-            <h2>Types Of Websites We Create With CMS</h2>
-          </div>
-          <div className="cms-container-box6-child2">
-            <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
-                Business websites
-              </p>
-              <p className="cms-container-box6-child2-subchild1-text">
-                Blog & news websites
-              </p>
-              <p className="cms-container-box6-child2-subchild1-text">
-                E-commerce websites
-              </p>
+        <div className="box6-Gredeint-color">
+          <div className="cms-container-box6">
+            <div className="cms-container-box6-child1">
+              <h2>Types Of Websites We Create With CMS</h2>
             </div>
-            <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
-                Real-estate websites
-              </p>
-              <p className="cms-container-box6-child2-subchild1-text">
-                Community websites
-              </p>
-            </div>
-            <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
-                Charity websites
-              </p>
-              <p className="cms-container-box6-child2-subchild1-text">
-                Portfolio websites
-              </p>
-              <p className="cms-container-box6-child2-subchild1-text">
-                Educational websites
-              </p>
+            <div className="cms-container-box6-child2">
+              <div className="cms-container-box6-child2-subchild1">
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Business websites
+                </p>
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Blog & news websites
+                </p>
+                <p className="cms-container-box6-child2-subchild1-text">
+                  E-commerce websites
+                </p>
+              </div>
+              <div className="cms-container-box6-child2-subchild1">
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Real-estate websites
+                </p>
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Community websites
+                </p>
+              </div>
+              <div className="cms-container-box6-child2-subchild1">
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Charity websites
+                </p>
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Portfolio websites
+                </p>
+                <p className="cms-container-box6-child2-subchild1-text">
+                  Educational websites
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -392,35 +369,35 @@ export default function Cms() {
           </div>
         </div>
 
-        <div className="cms-container-box9">
-          <h2 className="cms-container-box9-child1">
+        <div className="_crousal-container">
+          <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color"> People Say </span>About Us
           </h2>
-          <div className="cms-container-box9-child2">
+          <div className="_crousal-container-child2">
             <Carousel content={content} photo={photo} name={name} desc={desc} />
           </div>
         </div>
 
-        <div className="cms-container-box10">
-          <h2 className="cms-container-box10-text1">Why Choose Us</h2>
-          <p className="cms-container-box10-text2">
+        <div className="_tertiory-section-container">
+          <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
+          <p className="_tertiory-section-container-text2">
             Through adherence to industry-leading standards in design and
             development, we offer tailor-made CMS solutions that prioritize
             scalability, security, and effortless management
           </p>
         </div>
 
-        <div className="cms-container-box11">
-          <div className="cms-container-box11-child1">
-            <div className="cms-container-box11-child1-subchild">
-              <Button className="cms-container-box11-child1-subchild-btn">
+        <div className="_five-card-container">
+          <div className="_five-card-container-child1">
+            <div className="_five-card-container-child1-subchild">
+              <Button className="_five-card-container-child1-subchild-btn">
                 A
               </Button>
-              <h2 className="cms-container-box11-child1-subchild-text1">
+              <h2 className="_five-card-container-child1-subchild-text1">
                 Real-time project tracking
               </h2>
-              <p className="cms-container-box11-child1-subchild-text2">
+              <p className="_five-card-container-child1-subchild-text2">
                 Experience real-time project visibility with our convenient
                 dashboard, tailored to make your website journey special. Track
                 milestones, view tasks, and monitor development progress
@@ -429,28 +406,28 @@ export default function Cms() {
                 process
               </p>
             </div>
-            <div className="cms-container-box11-child1-subchild">
-              <Button className="cms-container-box11-child1-subchild-btn">
+            <div className="_five-card-container-child1-subchild">
+              <Button className="_five-card-container-child1-subchild-btn">
                 B
               </Button>
-              <h2 className="cms-container-box11-child1-subchild-text1">
+              <h2 className="_five-card-container-child1-subchild-text1">
                 Expertise in CMS Development
               </h2>
-              <p className="cms-container-box11-child1-subchild-text2">
+              <p className="_five-card-container-child1-subchild-text2">
                 At DevRiser, we have highly skilled professionals with extensive
                 expertise in CMS development services. In-depth knowledge of
                 various CMS platforms enables us to deliver top-notch websites
                 that are tailored to meet your specific requirements
               </p>
             </div>
-            <div className="cms-container-box11-child1-subchild">
-              <Button className="cms-container-box11-child1-subchild-btn">
+            <div className="_five-card-container-child1-subchild">
+              <Button className="_five-card-container-child1-subchild-btn">
                 C
               </Button>
-              <h2 className="cms-container-box11-child1-subchild-text1">
+              <h2 className="_five-card-container-child1-subchild-text1">
                 Professional Design & User Experience
               </h2>
-              <p className="cms-container-box11-child1-subchild-text2">
+              <p className="_five-card-container-child1-subchild-text2">
                 A visually appealing and user-friendly website is essential for
                 online success. Our professionals focus on creating websites
                 that not only look stunning but also offer a seamless user
@@ -458,15 +435,15 @@ export default function Cms() {
               </p>
             </div>
           </div>
-          <div className="cms-container-box11-child1">
-            <div className="cms-container-box11-child1-subchild">
-              <Button className="cms-container-box11-child1-subchild-btn">
+          <div className="_five-card-container-child1">
+            <div className="_five-card-container-child1-subchild">
+              <Button className="_five-card-container-child1-subchild-btn">
                 D
               </Button>
-              <h2 className="cms-container-box11-child1-subchild-text1">
+              <h2 className="_five-card-container-child1-subchild-text1">
                 Ongoing Support & Maintenance
               </h2>
-              <p className="cms-container-box11-child1-subchild-text2">
+              <p className="_five-card-container-child1-subchild-text2">
                 Our commitment to quality CMS development service extends beyond
                 the website's initial creation. From regular updates to
                 troubleshooting and technical assistance, we are dedicated to
@@ -474,17 +451,17 @@ export default function Cms() {
                 journey
               </p>
             </div>
-            <div className="cms-container-box11-child1-subchild">
-              <Button className="cms-container-box11-child1-subchild-btn">
+            <div className="_five-card-container-child1-subchild">
+              <Button className="_five-card-container-child1-subchild-btn">
                 E
               </Button>
               <h2
-                className="cms-container-box11-child1-subchild-text1"
+                className="_five-card-container-child1-subchild-text1"
                 style={{ width: "30%" }}
               >
                 Cost Effective
               </h2>
-              <p className="cms-container-box11-child1-subchild-text2">
+              <p className="_five-card-container-child1-subchild-text2">
                 Experience cost-effective CMS development services tailored to
                 your budget. Our team excels at delivering efficient websites
                 without compromising quality. With meticulous attention to
@@ -494,23 +471,26 @@ export default function Cms() {
           </div>
         </div>
 
-        <div className="cms-container-box12">
-          <h2 className="cms-container-box12-text">
+        <div className="_secondary-long-card">
+          <h2 className="_secondary-long-card-text">
             Let's Build Your Dream Website
           </h2>
-          <Button className="cms-container-box12-btn">Get in touch</Button>
+          <Button className="_secondary-long-card-btn">Get in touch</Button>
         </div>
 
-        <div className="cms-container-box13">
-          <h2 className="cms-container-box13-child1">
+        <div className="_faq-container">
+          <h2 className="_faq-container-child1">
             Frequently <span className="text-color">Asked</span> Questions
           </h2>
 
-          <div className="cms-container-box13-child2">
+          <div className="_faq-container-child2">
             <Faq />
           </div>
         </div>
       </div>
+         
     </div>
   );
 }
+
+//
