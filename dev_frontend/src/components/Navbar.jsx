@@ -11,6 +11,17 @@ import Contact from "../assets/navbar/light/contactUs.png";
 import Blog from "../assets/navbar/light/Blogs.png";
 import Solution from "../assets/navbar/light/Solutions.png";
 import About from "../assets/navbar/light/AboutUs.png";
+
+// Dark Icon
+
+import services_light from "../assets/navbar/dark/service.png"
+import light_icon from "../assets/navbar/dark/Dark.png"
+import contact_light from "../assets/navbar/dark/ContactUs.png"
+import blog_light from "../assets/navbar/dark/Blogs.png"
+import sol_light from "../assets/navbar/dark/Solutions.png"
+import about_light from "../assets/navbar/dark/AboutUs.png"
+import devriser_logo_light from "../assets/navbar/dark/devriserlogo_dark.png"
+ 
 import { Typography } from "@mui/material";
 import usa from "../assets/navbar/FlagImg/usaflagimg.png";
 import china from "../assets/navbar/FlagImg/chinaflagimg.png";
@@ -18,15 +29,16 @@ import france from "../assets/navbar/FlagImg/franceflagimg.png";
 import arabic from "../assets/navbar/FlagImg/arabic.png";
 
 import { useRouter } from 'next/navigation'
-import Link from "next/link";
+
 import { useGlobalContext } from "app/components/common/store";
+
 
 const Navbar = () => {
   const [sideBarContent, setSideBarContent] = useState([]);
   const [hover, setBgHover] = useState("");
   const [languageTag, setLanguageTag] = useState(false);
   const [navigatePage, setNavigatePage] = useState("");
-
+const router=useRouter()
   const {
     theme,
     setTheme,
@@ -37,11 +49,11 @@ const Navbar = () => {
   } = useGlobalContext();
 
   const navArr = [
-    { id: 0, name: "", icon: DevriserLogo, content: [] },
+    { id: 0, name: "", icon:theme?DevriserLogo:devriser_logo_light, content: [] },
     {
       id: 1,
       name: "Services",
-      icon: Service,
+      icon:theme? Service:services_light,
       content: [
         {
           id: 9,
@@ -64,10 +76,10 @@ const Navbar = () => {
         },
       ],
     },
-    { id: 2, name: "Solutions", icon: Solution, content: [] },
-    { id: 3, name: "Blog", icon: Blog, content: [] },
-    { id: 4, name: "Contact", icon: Contact, content: [] },
-    { id: 5, name: "About Us", icon: About, content: [] },
+    { id: 2, name: "Solutions", icon:theme? Solution:sol_light, content: [] },
+    { id: 3, name: "Blog", icon:theme? Blog:blog_light, content: [] },
+    { id: 4, name: "Contact", icon:theme? Contact:contact_light, content: [] },
+    { id: 5, name: "About Us", icon:theme? About:about_light, content: [] },
   ];
 
   const handleNavbarClick = (elm) => {
@@ -105,6 +117,11 @@ const Navbar = () => {
     setLanguageTag(true);
   };
 
+  const handelRoute=(path)=>{
+    router.push(path)
+    setShowSidebar(false)
+  }
+
   return (
     <>
       <div className="main-navbar-container" >
@@ -138,7 +155,7 @@ const Navbar = () => {
               <Image
                 className="navbar-child1-subchild-img  "
           
-                src={Light}
+                src={theme?Light:light_icon}
                 alt="themeToggle"
               />
             </div>
@@ -157,8 +174,8 @@ const Navbar = () => {
             <div className="mainContainer-navbar2-show">
               {sideBarContent.map((elm, i) => {
                 return (
-                  <div key={i}   className="navbar2-show-content">
-                   <Link onClick={()=>setShowSidebar(false)}  href={elm.routePath}   >{elm.routeName}</Link>
+                  <div onClick={()=>handelRoute(elm.routePath)} key={i}   className="navbar2-show-content">
+                   <Typography>{elm.routeName}</Typography>
                   </div>
                 );
               })}
