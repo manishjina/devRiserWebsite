@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "styles/navbar.css";
 import { Button, Box } from "../utils/custom";
 import DevriserLogo from "../assets/navbar/light/Home.png";
@@ -19,13 +19,22 @@ import arabic from "../assets/navbar/FlagImg/arabic.png";
 
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
+import { useGlobalContext } from "app/components/common/store";
 
 const Navbar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
   const [sideBarContent, setSideBarContent] = useState([]);
   const [hover, setBgHover] = useState("");
   const [languageTag, setLanguageTag] = useState(false);
-  const [navigatePage,setNavigatePage]=useState('')
+  const [navigatePage, setNavigatePage] = useState("");
+
+  const {
+    theme,
+    setTheme,
+    navbarState,
+    setNavbarState,
+    showSidebar,
+    setShowSidebar,
+  } = useGlobalContext();
 
   const navArr = [
     { id: 0, name: "", icon: DevriserLogo, content: [] },
@@ -34,13 +43,25 @@ const Navbar = () => {
       name: "Services",
       icon: Service,
       content: [
-        {id:9,routeName:"WebDevlopment",routePath:"/pages/webdevlopment"},
-        {id:10,routeName:"Mobile Devloment",routePath:"/pages/mobiledevlopment"},
-        {id:11,routeName:"UI/UX Services",routePath:"/pages/uiux"},
-        {id:12,routeName:"CMS Services",routePath:"/pages/cms"},
+        {
+          id: 9,
+          routeName: "WebDevlopment",
+          routePath: "/pages/webdevelopment",
+        },
+        {
+          id: 10,
+          routeName: "Mobile Devloment",
+          routePath: "/pages/mobiledevelopment",
+        },
+        { id: 11, routeName: "UI/UX Services", routePath: "/pages/uiux" },
+        { id: 12, routeName: "CMS Services", routePath: "/pages/cms" },
 
-        {id:13,routeName:"Managed Services",routePath:"/pages/"},
-        {id:14,routeName:"Enterprise Solution",routePath:"/pages/enterprisesolution"},
+        { id: 13, routeName: "Managed Services", routePath: "/pages/" },
+        {
+          id: 14,
+          routeName: "Enterprise Solution",
+          routePath: "/pages/enterprisesolution",
+        },
       ],
     },
     { id: 2, name: "Solutions", icon: Solution, content: [] },
@@ -84,7 +105,6 @@ const Navbar = () => {
     setLanguageTag(true);
   };
 
-
   return (
     <>
       <div className="main-navbar-container" >
@@ -114,8 +134,13 @@ const Navbar = () => {
             })}
           </div>
           <div className="navbar-child2">
-            <div>
-              <Image className="navbar-child1-subchild-img" src={Light} />
+            <div onClick={()=>setTheme((prev)=>!prev)}  >
+              <Image
+                className="navbar-child1-subchild-img  "
+          
+                src={Light}
+                alt="themeToggle"
+              />
             </div>
             <div onClick={() => setShowSidebar(true)}>
               <Button
@@ -133,7 +158,7 @@ const Navbar = () => {
               {sideBarContent.map((elm, i) => {
                 return (
                   <div key={i}   className="navbar2-show-content">
-                   <Link  href={elm.routePath}  >{elm.routeName}</Link>
+                   <Link onClick={()=>setShowSidebar(false)}  href={elm.routePath}   >{elm.routeName}</Link>
                   </div>
                 );
               })}

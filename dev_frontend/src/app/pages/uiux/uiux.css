@@ -1,5 +1,5 @@
 
-.main-container:before {
+.main-container-ux:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -10,7 +10,7 @@
   z-index: -1;
 
 }
-.main-container::after{
+.main-container-ux::after{
   content: "";
   position: absolute;
   width: 543px;

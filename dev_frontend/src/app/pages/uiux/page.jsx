@@ -5,7 +5,7 @@ import "./uiux.css";
 import Image from "next/image";
 import processLine from "../../../assets/illustration_ux/process line.png"
 export default function Uiux() {
-  return <div className="main-container">
+  return <div className="main-container-ux">
     <div className="ux-container">
     
     <div className="ux-container-box1">

@@ -1,11 +1,9 @@
-"use client";
 import Navbar from "../components/Navbar";
 import "./globals.css";
-import "../fonts/fonts.css"
+import "../fonts/fonts.css";
+import { GlobalContextProvider } from "./components/common/store";
 
 import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,8 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="root">
-        <Navbar />
-        {children}
+        <GlobalContextProvider>
+          <Navbar />
+          {children}
+        </GlobalContextProvider>
       </body>
     </html>
   );
