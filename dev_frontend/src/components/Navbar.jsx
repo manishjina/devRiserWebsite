@@ -45,7 +45,7 @@ const Navbar = () => {
       content: [
         {
           id: 9,
-          routeName: "WebDevlopment",
+          routeName: "Web Devlopment",
           routePath: "/pages/webdevelopment",
         },
         {
@@ -157,9 +157,9 @@ const Navbar = () => {
             <div className="mainContainer-navbar2-show">
               {sideBarContent.map((elm, i) => {
                 return (
-                  <div key={i}   className="navbar2-show-content">
-                   <Link onClick={()=>setShowSidebar(false)}  href={elm.routePath}   >{elm.routeName}</Link>
-                  </div>
+                  <Link onClick={()=>setShowSidebar(false)}  href={elm.routePath}   >  <div key={i}   className="navbar2-show-content">
+                {elm.routeName}
+                  </div></Link>
                 );
               })}
             </div>
