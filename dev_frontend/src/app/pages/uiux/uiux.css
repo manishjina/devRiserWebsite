@@ -1,5 +1,5 @@
 
-.main-container-ux:before {
+ .main-container-ux:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -19,9 +19,8 @@
   top: -145px;
   background: rgba(71, 167, 204, 0.8);
   filter: blur(182px);
-  border: 1px solid red;
   z-index: -1;
-}
+} 
 
 .ux-container {
  
@@ -29,11 +28,13 @@
     padding-right:4%;
 }
 .ux-container-box1{
-  border: 1px solid red;
+  margin: auto;
   display: flex;
   flex-direction: column;
 justify-content: space-between;
+margin-top: 150px;
 gap: 50px;
+width: 90%;
 }
 
 .ux-container-box1-child1{
@@ -46,27 +47,79 @@ gap: 50px;
 .ux-container-box1-child2{
   display: flex;
   justify-content: space-between;
+  gap: 30px;
+}
+.ux-container-box1-child2-subchild1>div{
+ height: 400px;
+ justify-content: center;
+ align-items: center;
 }
 
 .ux-container-box1-child2-subchild1{
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0px;
  width: 100%;
 }
+.ux-container-box1-child2-subchild1-heading{
+text-align: center;
+font-size: 30px;
+font-weight: 600;
+background: linear-gradient(.25turn, rgba(0, 196, 224, 1) 60%,rgba(163, 113, 247, 1) 40%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin: 30% auto 70% auto;
+padding-left: 15%;
+padding-right: 15%;
+
+  
+}
+
+.ux-container-box1-child2-subchild1-content{
+  color: #FFF9F9;
+  font-size: 26px;
+  font-weight: 600;
+padding: 0px 15% 0px 15%;
+
+}
+
 .ux-container-box1-child2-subchild2{
-  border: 1px solid red;
   margin: auto;
  width: auto;
 }
-.ux-container-box1-child2-subchild3{
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
- width: 100%;
 
+.ux-container-2card{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border: 1px solid red;
+}
+.ux-container-2card-child1{
+width: 50%;
+display: flex;
+flex-direction: column;
+gap:20px;
+}
+.ux-container-2card-child1-text1{
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.ux-container-2card-child1-text2{
+  color: #FFF;
+  font-size: 16px;
+}
+.ux-container-2card-child2{
+width: 50%;
+border-radius: 8px;
+border: 1px solid #000;
+background: #FFF;
+
+  
 }

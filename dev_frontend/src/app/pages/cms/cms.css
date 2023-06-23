@@ -59,7 +59,8 @@ color:#E67CA2;
     gap:40px;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 .cms-container-box5-boxbtn-btn{
 background: url(../../../assets/illustration/small-btn.png);
@@ -80,13 +81,14 @@ color: #FFFFFF;
 
 .cms-container-box5-card{
     display: flex;
+    margin: auto;
 background: #EEEEEE;
 border-radius: 8px;
 align-items: center;
 justify-content: space-between;
+width: 95%;
 margin-top: 40px;
-height: 400px;
-padding: 70px;
+padding: 50px;
 
 }
 .cms-container-box5-card-img{
@@ -104,14 +106,13 @@ line-height: 45px;
 .cms-container-box6{
     display: flex;
     align-items: center;
-    margin-top: 150px;
-    justify-content: space-between;
-    
+    justify-content: space-evenly;
+    width: 90%;
+margin: auto;
+margin-top: 100px;
+
 }
-.cms-container-box6-child1{
-    width: 40%;
-    
-}
+
 .cms-container-box6-child1>h2{
 font-weight: 600;
 font-size: 36px;
@@ -131,8 +132,6 @@ flex-direction: column;
 gap: 10px;
 align-items: center;
 justify-content: center;
-width: 55%;
-border: 2px solid red;
 text-align: center;
 
 
@@ -170,10 +169,10 @@ padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
     margin-top: 150px;
     justify-content: space-between;
-    background: url(../../../assets/illustration/CMS\ Branch\ Illustration.png);
+    background: url(../../../assets/illustration/cmsBranch.png);
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 40px;
@@ -202,7 +201,7 @@ color: #FFFFFF;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 45px;
+    margin-top: 40px;
 }
 .cms-container-box7-child2-subchild1-text{
     background: url(../../../assets/illustration/our-process-btn.png);
@@ -212,15 +211,15 @@ color: #FFFFFF;
     border-radius: 8px;
     font-style: normal;
     font-weight: 200;
-    width: 360px;
+    width: 300px;
     height: 92px;
     font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    padding-left: 9%;
-    padding-right:9%;
+    padding-left: 7%;
+    padding-right:7%;
 
     }
     #cms-container-box7-child2-subchild1-text{
