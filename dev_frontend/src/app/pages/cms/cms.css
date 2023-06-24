@@ -48,7 +48,7 @@ color:#E67CA2;
     align-items: center;
     justify-content: center;
     padding-left: 10%;
-    padding-right: 5%;
+    padding-right: 3%;
 }
 .cms-container-box5-text{
     font-weight: 600;
@@ -116,7 +116,7 @@ margin: auto;
 margin-top: 100px;
 position: relative;
 padding-left: 10%;
-padding-right: 5%;
+padding-right: 3%;
 }
 
 .cms-container-box6-gradient{
@@ -192,7 +192,7 @@ padding: 5px;
     background-position: center;
     background-position-y: 40px;
     padding-left: 10%;
-    padding-right: 5%;
+    padding-right: 3%;
 
 }
 .cms-container-box7-text{
@@ -253,7 +253,7 @@ color: #FFFFFF;
         justify-content: center;
         position: relative;
         padding-left: 10%;
-        padding-right: 5%;
+        padding-right: 3%;
 
     }
     .cms-container-box8-gradient{
@@ -325,7 +325,7 @@ color: #FFFFFF;
         
  right:-40px;
         top: 100px;
-        border:1px solid red;
+       
 
     }
            
