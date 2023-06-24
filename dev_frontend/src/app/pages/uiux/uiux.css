@@ -38,10 +38,23 @@ background: var(--uiux-color, linear-gradient(142deg, #4DB1C7 0%, #0036FF 100%))
   flex-direction: column;
 justify-content: space-between;
 margin-top: 150px;
-gap: 50px;
+gap: 100px;
 width: 90%;
 padding-left: 10%;
-padding-right: 5%;
+padding-right: 3%;
+position: relative;
+}
+
+.ux-container-box1-gradeint{
+  position: absolute;
+  height: 25%;
+  width:20%;
+  background:rgba(96, 123, 234, 0.7);
+  filter:blur(200px);
+  z-index: -1;
+  top: 50px;
+  left:-50px;
+
 }
 
 .ux-container-box1-child1{
@@ -105,7 +118,7 @@ padding: 0px 15% 0px 15%;
   justify-content: space-between;
   gap: 30px;
   padding-left: 10%;
-padding-right: 5%;
+padding-right: 3%;
 
 }
 .ux-container-2card-child1{

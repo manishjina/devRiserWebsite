@@ -138,6 +138,7 @@ export default function Uiux() {
 </div>
 
     <div className="ux-container-box1">
+    <div className="ux-container-box1-gradeint"></div>
      <h2 className="ux-container-box1-child1">Our <span className="text-color-uix" >Process</span></h2>
      <div className="ux-container-box1-child2">
            <div  className="ux-container-box1-child2-subchild1">

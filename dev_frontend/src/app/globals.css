@@ -32,8 +32,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 50px;
+ margin: auto;
  
 
  
@@ -45,7 +46,7 @@ a {
   align-items: center;
   gap: 30px;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 ._hero-section-container-primary-child1 {
   width: 60%;
@@ -86,7 +87,7 @@ a {
   align-items: center;
   gap: 50px;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 
 ._secondry-section-container-text1 {
@@ -112,7 +113,7 @@ a {
   margin-top: 100px;
   width: 80%;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 
 ._grid-four-card-child {
@@ -149,7 +150,8 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
-
+padding-left: 10%;
+padding-right: 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,7 +182,7 @@ a {
   align-items: center;
   justify-content: center;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 ._crousal-container-child1 {
   font-weight: 600;
@@ -194,10 +196,11 @@ a {
   align-items: center;
   justify-content: center;
   background: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
+
   margin-left: -10%;
+  margin-right: -5%;
   padding-left: 10%;
-  margin-right: -6%;
-  padding-right: 6%;
+  padding-right: 3%;
   height: 450px;
 }
 
@@ -211,7 +214,7 @@ a {
 position: relative;
   align-items: center;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 
 ._tertiory-section-container-text1 {
@@ -236,7 +239,7 @@ position: relative;
   justify-content: center;
   align-items: center;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 ._five-card-container-child1 {
   display: flex;
@@ -289,7 +292,7 @@ position: relative;
   justify-content: center;
   align-items: center;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 ._five-card-container-child1 {
   display: flex;
@@ -372,7 +375,7 @@ position: relative;
   justify-content: center;
   align-items: center;
   padding-left: 10%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 ._faq-container-child1 {
   font-weight: 600;
