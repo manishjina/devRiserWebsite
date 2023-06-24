@@ -3,7 +3,7 @@ import "./globals.css";
 import "../fonts/fonts.css";
 import { GlobalContextProvider } from "./components/common/store";
 
-import { Inter } from "next/font/google";
+
 
 export const metadata = {
   title: "Create Next App",

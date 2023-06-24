@@ -7,9 +7,13 @@ import processLine from "../../../assets/illustration_ux/process line.png"
 import {Button} from "../../../utils/custom"
 import Carousel from "components/Carousel";
 import Avatar from "../../../assets/illustration/avatar.png"
-
+import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png"
 import Faq from "components/Faq";
+import { useGlobalContext } from "app/components/common/store";
 export default function Uiux() {
+
+
+  const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
 
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
@@ -25,16 +29,31 @@ export default function Uiux() {
     "Master of Design, Layers",
   ];
 
+  const faqContent=[
+    {
+      question:"Why should I invest in custom website development services ?",ans:"Custom website development ensures a unique online presence  to your brand, offering enhanced functionality, better user experience, and improved search engine visibility.",panel:"1"
+    },
+    {
+      question:"How long does it take to develop a custom website ?",ans:"The duration of a UI/UX design project varies depending on the complexity and scope of the project. It typically involves multiple stages, including research, wireframing, prototyping, and testing. We will provide the timeline after assessing your specific requirements.",panel:"2"
+    },{
+      question:"What is the role of user research in UI/UX design ?",ans:"User research plays a crucial role in UI/UX design as it helps in understanding the target audience, their needs, behaviors, and preferences. It allows us to create designs that are tailored to meet user expectations, resulting in a more effective and engaging user experience.",panel:"3"
+    },
+    {
+      question:"How do you ensure a consistent and cohesive design across my website ?",
+      ans:"We ensure consistency in design through the use of standardized style guides, design systems, and a meticulous approach to design implementation. By establishing consistent styling, layout, and interaction patterns, we create a seamless and cohesive user experience throughout your website.",panel:"4"
+    }
+  ]
+
 
   return <div className="main-container-ux">
     <div className="ux-container">
 
 
-    <div className="_hero-section-container">
+    <div className="_hero-section-container"   id="hero-section-uix-pattern" onClick={()=>setShowSidebar(false)}  >
           <div className="_hero-section-container-primary">
-            <div className="_hero-section-container-primary-child1">
+            <div className="_hero-section-container-primary-child1" >
               <h2 className="_hero-section-container-primary-child1-text1">
-              Enrich User Experience With Our Exquisite <span className="text-color">UI/UX Design Services</span> For
+              Enrich User Experience With Our Exquisite <span className="text-color-uix">UI/UX Design Services</span> For
              
               </h2>
               <p className="_hero-section-container-primary-child1-text2">
@@ -42,11 +61,11 @@ export default function Uiux() {
 
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn">Let's Begin</Button>
+                <Button id="hero_section-uix-button" className="_hero-section-container-primary-btn">Let's Begin</Button>
               </div>
             </div>
             <div className="_hero-section-container-primary-child2">
-              {/* <Image src={darkIllustration} /> */}
+              {/* <Image src={darkIllustration} alt={"dark_illustration"} /> */}
             </div>
           </div>
         </div>
@@ -88,7 +107,7 @@ export default function Uiux() {
           </div>
         </div>
 
-        <div className="_primary-long-card">
+        <div id="primary-long-card-uix" className="_primary-long-card">
           <h2 className="_primary-long-card-text1">
           Spark User Interest and Fuel Success With Intuitive UI/UX Design Services
           </h2>
@@ -119,7 +138,7 @@ export default function Uiux() {
 </div>
 
     <div className="ux-container-box1">
-     <h2 className="ux-container-box1-child1">Our Process</h2>
+     <h2 className="ux-container-box1-child1">Our <span className="text-color-uix" >Process</span></h2>
      <div className="ux-container-box1-child2">
            <div  className="ux-container-box1-child2-subchild1">
             <div><h2 className="ux-container-box1-child2-subchild1-heading">Research and Discovery</h2></div>
@@ -148,9 +167,9 @@ export default function Uiux() {
         <div className="_crousal-container">
           <h2 className="_crousal-container-child1">
             {" "}
-            What<span className="text-color"> People Say </span>About Us
+            What<span className="text-color-uix"> People Say </span>About Us
           </h2>
-          <div className="_crousal-container-child2">
+          <div className="_crousal-container-child2" id="crousal-container-child2-uix"  >
             <Carousel content={content} photo={photo} name={name} desc={desc} />
           </div>
         </div>
@@ -232,19 +251,19 @@ Design Services
           </div>
         </div>
 
-        <div className="_secondary-long-card">
+        <div className="_secondary-long-card" id="secondary-long-card-uix" >
           <h2 className="_secondary-long-card-text">
           Get Ready To Start Your Dream Project
           </h2>
-          <Button className="_secondary-long-card-btn">Let's Talk</Button>
+          <Button className="_secondary-long-card-btn"  id='secondary-long-card-btn-uix' >Let's Talk</Button>
         </div>
         <div className="_faq-container">
           <h2 className="_faq-container-child1">
-            Frequently <span className="text-color">Asked</span> Questions
+            Frequently <span className="text-color-uix">Asked</span> Questions
           </h2>
 
           <div className="_faq-container-child2">
-            <Faq />
+            <Faq faqContent={faqContent} />
           </div>
         </div>
 
