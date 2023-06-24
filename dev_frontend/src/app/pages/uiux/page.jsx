@@ -44,12 +44,21 @@ export default function Uiux() {
     }
   ]
 
+  const lightTheme={
+    backgroundColor:'#F6F6F6',
+    color:'#2A2A2A'
+  }
+  const darkTheme={
+    backgroundColor:'#090a0b',
+    color:'#FFFFFF'
+  }
+  
 
   return <div className="main-container-ux">
-    <div className="ux-container">
+    <div className="ux-container" >
 
 
-    <div className="_hero-section-container"   id="hero-section-uix-pattern" onClick={()=>setShowSidebar(false)}  >
+    <div className="_hero-section-container" style={theme?lightTheme:darkTheme}  id="hero-section-uix-pattern" onClick={()=>setShowSidebar(false)}  >
           <div className="_hero-section-container-primary">
             <div className="_hero-section-container-primary-child1" >
               <h2 className="_hero-section-container-primary-child1-text1">
@@ -69,9 +78,9 @@ export default function Uiux() {
             </div>
           </div>
         </div>
-        <div className="_secondry-section-container">
+        <div className="_secondry-section-container" >
           <div>
-            <h2 className="_secondry-section-container-text1">
+            <h2 className="_secondry-section-container-text1" style={{color:'#ffff'}}>
             Discover The Power Of Our UI/UX Design Services
             </h2>
           </div>
@@ -115,17 +124,17 @@ export default function Uiux() {
           Elevate your website's performance with our comprehensive UI/UX design service. We prioritize user-centric principles, seamlessly merging aesthetics and functionality for an exceptional digital experience. With intuitive navigation, responsive design, and engaging interactions, we captivate users, boosting satisfaction, visit durations, conversions, and brand loyalty. Experience the transformative power of our well-crafted UI/UX design service and unlock the full potential of your online presence
           </p>
         </div>
-        <div className="_secondry-section-container" style={{marginTop:'150px',gap:'20px'}}>
+        <div className="_secondry-section-container" style={theme?lightTheme:darkTheme}>
           <div>
             <h2 className="_secondry-section-container-text1">
             Embrace The Benefits Of UI UX Design Services
             </h2>
           </div>
-          <p className="_secondry-section-container-text2" style={{width:'60%'}}>
+          <p className="_secondry-section-container-text2"  style={{width:'60%'}}>
           Witness the power of exceptional UI/UX services and transform your digital experiences with our expert team of designers
           </p>
         </div>
-<div className="ux-container-2card">
+<div className="ux-container-2card"   style={theme?lightTheme:darkTheme}>
   <div className="ux-container-2card-child1">
     <h2 className="ux-container-2card-child1-text1">Experience The Art Of Meticulous Design With Our UI/UX Specialists</h2>
     <p className="ux-container-2card-child1-text2">We are the creators of user-friendly interfaces and seamless interactions. Our goal is to turn ordinary designs into extraordinary experiences, unlocking new possibilities in every detail. With a combination of creativity and a focus on users' needs, we design digital journeys that surpass expectations. From initial wireframes to interactive prototypes, we bring ideas to life, making each click, swipe, and tap a captivating interaction between the user and the interface</p>
@@ -165,7 +174,7 @@ export default function Uiux() {
 
     </div> 
 
-        <div className="_crousal-container">
+        <div className="_crousal-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color-uix"> People Say </span>About Us
@@ -177,14 +186,14 @@ export default function Uiux() {
 
 
 
-        <div className="_tertiory-section-container">
+        <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
           <p className="_tertiory-section-container-text2">
           We offer a user-centered approach, creative solutions, and industry expertise in our UI UX design services to make your digital product stand out in the market.
           </p>
         </div>
 
-        <div className="_five-card-container">
+        <div className="_five-card-container" style={theme?lightTheme:darkTheme}>
           <div className="_five-card-container-child1">
             <div className="_five-card-container-child1-subchild">
               <Button className="_five-card-container-child1-subchild-btn">
@@ -258,12 +267,12 @@ Design Services
           </h2>
           <Button className="_secondary-long-card-btn"  id='secondary-long-card-btn-uix' >Let's Talk</Button>
         </div>
-        <div className="_faq-container">
+        <div className="_faq-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color-uix">Asked</span> Questions
           </h2>
 
-          <div className="_faq-container-child2">
+          <div className="_faq-container-child2" >
             <Faq faqContent={faqContent} />
           </div>
         </div>

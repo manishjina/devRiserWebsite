@@ -42,6 +42,9 @@ export default function Cms() {
     { x: 0, y: 0 },
   ]);
 
+
+
+
   const handleMouseMove = (index, event) => {
     const rect = event.target.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
@@ -72,13 +75,25 @@ const faqContent=[
     question:"Is my data secure with you?",ans:"Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",panel:"4"
   }
 ]
+
+
+const lightTheme={
+  backgroundColor:'#F6F6F6',
+  color:'#2A2A2A'
+}
+const darkTheme={
+  backgroundColor:'#090a0b',
+  color:'#FFFFFF'
+}
+
+
   return (
-    <div className="container" onClick={() => setShowSidebar(false)}>
+    <div className="container" onClick={() => setShowSidebar(false)} >
       <div className="main-container">
         <div
           className="_hero-section-container"
           id="hero-section-pattern"
-        
+         style={theme?lightTheme:darkTheme}
         >
           <div className="container-gradient"></div>
           <div className="_hero-section-container-primary">
@@ -96,7 +111,7 @@ const faqContent=[
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn">
+                <Button className="_hero-section-container-primary-btn" >
                   Let's Begin
                 </Button>
               </div>
@@ -109,7 +124,7 @@ const faqContent=[
 
         <div className="_secondry-section-container">
           <div>
-            <h2 className="_secondry-section-container-text1">
+            <h2 className="_secondry-section-container-text1" style={{color:'#ffff'}}>
               Elevate Your Website Creation With Our Expert CMS Development
               Services
             </h2>
@@ -190,7 +205,7 @@ const faqContent=[
           </p>
         </div>
 
-        <div className="cms-container-box5">
+        <div className="cms-container-box5"   style={theme?lightTheme:darkTheme}>
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
           <div>
             <div className="cms-container-box5-boxbtn">
@@ -221,7 +236,7 @@ const faqContent=[
           </div>
         </div>
 
-        <div className="cms-container-box6">
+        <div className="cms-container-box6" style={theme?lightTheme:darkTheme}>
           <div className="cms-container-box6-gradient"> </div>
           <div className="cms-container-box6-child1">
             <h2>Types Of Websites We Create With CMS</h2>
@@ -417,7 +432,7 @@ const faqContent=[
           </div>
         </div>
 
-        <div className="_crousal-container">
+        <div className="_crousal-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color"> People Say </span>About Us
@@ -427,7 +442,7 @@ const faqContent=[
           </div>
         </div>
 
-        <div className="_tertiory-section-container">
+        <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
           <div className="tertiory-section-container-gradient"></div>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
           <p className="_tertiory-section-container-text2">
@@ -437,7 +452,7 @@ const faqContent=[
           </p>
         </div>
 
-        <div className="_five-card-container">
+        <div className="_five-card-container" style={theme?lightTheme:darkTheme}>
           <div className="_five-card-container-child1">
             <div className="_five-card-container-child1-subchild">
               <Button className="_five-card-container-child1-subchild-btn">
@@ -527,7 +542,7 @@ const faqContent=[
           <Button className="_secondary-long-card-btn">Get in touch</Button>
         </div>
 
-        <div className="_faq-container">
+        <div className="_faq-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color">Asked</span> Questions
           </h2>

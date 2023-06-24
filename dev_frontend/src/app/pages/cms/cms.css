@@ -8,6 +8,7 @@
     background-repeat: no-repeat;
     background-position-x:100px;
 
+    border: 1px solid red;
 
   }
   
@@ -39,7 +40,7 @@ color:#E67CA2;
 
 
 .cms-container-box5{
-    margin-top: 150px;
+    padding-top: 100px;
     
     display: flex;
     flex-direction: column;
@@ -49,11 +50,12 @@ color:#E67CA2;
     justify-content: center;
     padding-left: 10%;
     padding-right: 3%;
+    border: 1px solid red;
+
 }
 .cms-container-box5-text{
     font-weight: 600;
     font-size: 36px;
-    color: #FFFFFF;
     
 }
 .cms-container-box5-boxbtn{
@@ -91,6 +93,8 @@ justify-content: space-between;
 width: 95%;
 margin-top: 40px;
 padding: 50px;
+border: 1px solid red;
+
 
 }
 .cms-container-box5-card-img{
@@ -111,12 +115,15 @@ line-height: 45px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 90%;
+    width: 100%;
 margin: auto;
-margin-top: 100px;
+padding-top: 100px;
 position: relative;
-padding-left: 10%;
-padding-right: 3%;
+padding-left: 15%;
+padding-right: 10%;
+padding-bottom: 5%;
+border: 1px solid red;
+
 }
 
 .cms-container-box6-gradient{
@@ -136,7 +143,6 @@ padding-right: 3%;
 .cms-container-box6-child1>h2{
 font-weight: 600;
 font-size: 36px;
-color: #FFFFFF;
 
 }
 
@@ -148,6 +154,7 @@ gap: 10px;
 align-items: center;
 justify-content: center;
 text-align: center;
+
 }
 
 
@@ -175,7 +182,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-align: center;
-color: #FFFFFF;
 padding: 5px;
 }
 
@@ -185,14 +191,17 @@ padding: 5px;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    margin-top: 150px;
+    padding-top: 50px;
     justify-content: space-between;
     background: url(../../../assets/illustration/cmsBranch.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: 40px;
+    background-position-y: 95px;
+
     padding-left: 10%;
-    padding-right: 3%;
+    padding-right: 6%;
+border: 1px solid red;
+
 
 }
 .cms-container-box7-text{
@@ -244,7 +253,7 @@ color: #FFFFFF;
 
     }
     .cms-container-box8{
-        margin-top: 150px;
+        padding-top: 100px;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -254,6 +263,8 @@ color: #FFFFFF;
         position: relative;
         padding-left: 10%;
         padding-right: 3%;
+border: 1px solid red;
+
 
     }
     .cms-container-box8-gradient{
@@ -266,7 +277,7 @@ color: #FFFFFF;
         top: -150px;
         left:-50px;
    
-       
+       border: 1px solid red;
         
     }
     .cms-container-box8-child1{

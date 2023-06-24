@@ -37,12 +37,13 @@ background: var(--uiux-color, linear-gradient(142deg, #4DB1C7 0%, #0036FF 100%))
   display: flex;
   flex-direction: column;
 justify-content: space-between;
-margin-top: 150px;
+padding-top: 100px;
 gap: 100px;
-width: 90%;
-padding-left: 10%;
-padding-right: 3%;
+width: 100%;
+padding-left: 15%;
+padding-right: 8%;
 position: relative;
+border: 1px solid red;
 }
 
 .ux-container-box1-gradeint{
@@ -113,12 +114,14 @@ padding: 0px 15% 0px 15%;
 }
 
 .ux-container-2card{
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   justify-content: space-between;
   gap: 30px;
   padding-left: 10%;
 padding-right: 3%;
+border: 1px solid red;
+padding-bottom: 50px;
 
 }
 .ux-container-2card-child1{
@@ -128,13 +131,11 @@ flex-direction: column;
 gap:20px;
 }
 .ux-container-2card-child1-text1{
-  color: #FFF;
   font-size: 36px;
   font-weight: 600;
 }
 
 .ux-container-2card-child1-text2{
-  color: #FFF;
   font-size: 16px;
 }
 .ux-container-2card-child2{
@@ -150,6 +151,8 @@ background: #FFF;
   background: url(../../../assets/illustration_ux/long\ box.png);
   background-repeat: no-repeat;
   background-size: cover;
+border: 1px solid red;
+
 }
 #crousal-container-child2-uix{
   background: var(--uiux-color, linear-gradient(142deg, #4DB1C7 0%, #0036FF 100%));
