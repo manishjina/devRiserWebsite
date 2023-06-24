@@ -124,7 +124,7 @@ const router=useRouter()
 
   return (
     <>
-      <div className="main-navbar-container" >
+      <div className="main-navbar-container"  >
         <nav className="navbar">
           <div className="navbar-child1">
             {navArr.map((elm) => {

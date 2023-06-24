@@ -1,37 +1,37 @@
 
 
-  .container::after{
-    content: "";
-    position: absolute;
-    top:-40px;
-    left: -150px;
-    width: 40%;
-    height: 40%;
-    background:#ED958D;
-
-    filter:blur(132px);
-    z-index: -1;
- 
-  }
-  .container::before{
-    content: "";
-    position: absolute;
-    top:-10px;
-    left: 70px;
-    width: 50%;
-    height: 50%;
-    /* background:#ED958D; */
+  #hero-section-pattern{
+   
+    position: relative;
+   
     background:url(../../../assets/illustration/pentagon-pattern-dark.png);
     background-repeat: no-repeat;
-background-size: cover;
-    /* filter:blur(182px); */
-    z-index: -1;
-    
+    background-position-x:100px;
+
+
   }
-.main-container{
-    padding-left:10%;
-    padding-right:4%;
-}
+  
+  #hero-section-pattern::after{
+    content: "";
+    position: absolute;
+
+   display: block;
+   background-color:#090a0b;
+
+    z-index: -1; 
+  }
+
+  .container-gradient{
+    position: absolute;
+  background:#ED958D;
+   height: 200px;
+   width: 300px;
+   top:0;
+   left: 0;
+     filter:blur(90px); 
+  }
+
+
 
 .text-color{
 color:#E67CA2;
@@ -47,6 +47,8 @@ color:#E67CA2;
 
     align-items: center;
     justify-content: center;
+    padding-left: 10%;
+    padding-right: 5%;
 }
 .cms-container-box5-text{
     font-weight: 600;
@@ -103,6 +105,8 @@ color: #2A2A2A;
 line-height: 45px;
 
 }
+
+
 .cms-container-box6{
     display: flex;
     align-items: center;
@@ -110,7 +114,23 @@ line-height: 45px;
     width: 90%;
 margin: auto;
 margin-top: 100px;
+position: relative;
+padding-left: 10%;
+padding-right: 5%;
+}
 
+.cms-container-box6-gradient{
+    position: absolute;
+    background:#ED958D;
+
+    filter:blur(110px);
+    z-index: -1;
+    top: 10px;
+    height: 40%;
+    width: 30%;
+    right: -50px;
+    
+    border:10px solid red;
 }
 
 .cms-container-box6-child1>h2{
@@ -119,12 +139,7 @@ font-size: 36px;
 color: #FFFFFF;
 
 }
-.cms-container-box6-child2::after{
-    background:#ED958D;
 
-    filter:blur(132px);
-    z-index: -1;
-}
 .cms-container-box6-child2{
     position: relative;
 display: flex;
@@ -133,9 +148,9 @@ gap: 10px;
 align-items: center;
 justify-content: center;
 text-align: center;
-
-
 }
+
+
 .cms-container-box6-child2-subchild1{
     display: flex;
     justify-content: center;
@@ -176,6 +191,8 @@ padding: 5px;
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 40px;
+    padding-left: 10%;
+    padding-right: 5%;
 
 }
 .cms-container-box7-text{
@@ -195,8 +212,7 @@ color: #FFFFFF;
     
     text-align: center;
 
-}
-.cms-container-box7-child2-subchild1{
+}.cms-container-box7-child2-subchild1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,7 +251,23 @@ color: #FFFFFF;
         
         text-align: center;
         justify-content: center;
+        position: relative;
+        padding-left: 10%;
+        padding-right: 5%;
 
+    }
+    .cms-container-box8-gradient{
+        position: absolute;
+        height: 40%;
+        width:20%;
+        background: #E08EF5;
+        filter:blur(250px);
+        z-index: -1;
+        top: -150px;
+        left:-50px;
+   
+       
+        
     }
     .cms-container-box8-child1{
         
@@ -279,4 +311,21 @@ color: #FFFFFF;
 
     
 
+
+
+    /* tertiory gradient starts from here */
+
+    .tertiory-section-container-gradient{
+        position: absolute;
+        height: 100%;
+        width:30%;
+        background: #E08EF5;
+        filter:blur(110px);
+        z-index: -1;
+        
+ right:-40px;
+        top: 100px;
+        border:1px solid red;
+
+    }
            
