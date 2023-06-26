@@ -1,20 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./cms.css";
 
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png";
-import Carousel from "components/Carousel";
+import Carousel from "../../../components/Carousel";
 import Avatar from "../../../assets/illustration/avatar.png";
 import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
-import Faq from "components/Faq";
+import Faq from "../../../components/Faq";
 import { useGlobalContext } from "app/components/common/store";
 export default function Cms() {
   const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
   const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
   const [btnColor, setBtnColour] = useState(0);
   const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
+const [data,setData]=useState([])
 
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
@@ -30,20 +31,13 @@ export default function Cms() {
     "Master of Design, Layers",
   ];
   const handleSixbtn = (ele, id) => {
+   
     setBtnColour(ele.id);
 
     setContent(ele.content);
     setContentImg(ele.img);
   };
-  const [gradientPositions, setGradientPositions] = useState([
-    { x: null, y: null },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-  ]);
-
-
-
+ 
 
   const handleMouseMove = (index, event) => {
     const rect = event.target.getBoundingClientRect();
@@ -86,6 +80,15 @@ const darkTheme={
   color:'#FFFFFF'
 }
 
+useEffect(()=>{
+  if(theme){
+    setData(ourProcessDataWhite)
+    }
+    else{
+      setData(ourProcessDataBlack)
+    }
+},[theme,handleSixbtn])
+
 
   return (
     <div className="container" onClick={() => setShowSidebar(false)} >
@@ -103,7 +106,7 @@ const darkTheme={
                 <span className="text-color">CMS Development Services</span> For
                 Maximizing Your Website's Potential
               </h2>
-              <p className="_hero-section-container-primary-child1-text2">
+              <p className="_hero-section-container-primary-child1-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
                 {" "}
                 We optimize the true power of your business with our advanced
                 CMS development services. Our CMS team handles every aspect of
@@ -111,7 +114,7 @@ const darkTheme={
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn" >
+                <Button className="_hero-section-container-primary-btn" style={{color:theme?'#2A2A2A':'#fff'}} >
                   Let's Begin
                 </Button>
               </div>
@@ -209,12 +212,14 @@ const darkTheme={
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
           <div>
             <div className="cms-container-box5-boxbtn">
-              {ourProcessDataBlack.map((ele) => {
+              {data.length>0&&data.map((ele) => {
                 return (
                   <Button
                     style={{
-                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "",
-                      backgroundImage: btnColor == ele.id ? "none" : "",
+                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "" ||theme?'#E2DFD2':'',
+                      backgroundImage: btnColor == ele.id ? "none" : ""||theme?"none":'',
+                      color:theme?'#090A0B':'white',
+                     
                     }}
                     className="cms-container-box5-boxbtn-btn"
                     onClick={() => handleSixbtn(ele, ele.id)}
@@ -225,13 +230,13 @@ const darkTheme={
                 );
               })}
             </div>
-            <div className="cms-container-box5-card">
+            <div className="cms-container-box5-card" style={{background:theme?'#090A0B':'#EEE'}}>
               <Image
                 className="cms-container-box5-card-img"
                 src={contentImg}
                 alt="logo-fault"
               />
-              <p className="cms-container-box5-card-text">{contentData}</p>
+              <p className="cms-container-box5-card-text" style={{color:theme?'#FFF':'#2A2A2A'}}>{contentData}</p>
             </div>
           </div>
         </div>
@@ -242,33 +247,33 @@ const darkTheme={
             <h2>Types Of Websites We Create With CMS</h2>
           </div>
           <div className="cms-container-box6-child2">
-            <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+            <div className="cms-container-box6-child2-subchild1" >
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Business websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Blog & news websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 E-commerce websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Real-estate websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Community websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Charity websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Portfolio websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Educational websites
               </p>
             </div>
@@ -445,7 +450,7 @@ const darkTheme={
         <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
           <div className="tertiory-section-container-gradient"></div>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
-          <p className="_tertiory-section-container-text2">
+          <p className="_tertiory-section-container-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
             Through adherence to industry-leading standards in design and
             development, we offer tailor-made CMS solutions that prioritize
             scalability, security, and effortless management
