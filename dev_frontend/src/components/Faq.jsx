@@ -1,10 +1,10 @@
 
 "use client";
-import "../styles/Faq.css";
+import "@/styles/Faq.css";
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import MinusImg from "../assets/illustration/MinusImg.png";
-import PlusImg from "../assets/illustration/PlusImg.png";
+import MinusImg from "../assets/illustration/plusImg.png";
+import PlusImg from "../assets/illustration/minusImg.png";
 
 import MuiAccordion from "@mui/material/Accordion";
 
