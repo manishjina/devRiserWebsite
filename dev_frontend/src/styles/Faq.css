@@ -33,3 +33,26 @@ margin-left: -15px;
    margin-left: -15px;
 
 }
+
+@media only screen and (max-width: 976px) { 
+   .Accordian-text1{
+      width: 90%;
+      
+      }
+      .Accordian-text2{
+        width: 95%;
+      
+      }
+ 
+}
+@media only screen and (max-width: 550px) { 
+   .Accordian-text1{
+      width: 90%;
+      font-size: 16px;
+      }
+      .Accordian-text2{
+        width: 95%;
+      font-size: 14px;
+      }
+ 
+}

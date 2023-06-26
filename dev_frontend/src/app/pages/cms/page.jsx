@@ -4,9 +4,9 @@ import "./cms.css";
 
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
-import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
+import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png";
 import Carousel from "components/Carousel";
-import Avatar from "../../../assets/illustration/Avatar.png";
+import Avatar from "../../../assets/illustration/avatar.png";
 import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
 import Faq from "components/Faq";
 import { useGlobalContext } from "app/components/common/store";
@@ -279,19 +279,19 @@ const darkTheme={
           <h2 className="cms-container-box7-text">
             Our <span className="text-color">Process</span>
           </h2>
-          <div className="cms-container-box7-child2">
-            <div className="cms-container-box7-child2-subchild1">
+          <div className="cms-container-box7-child2 ">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-1">
               <p className="cms-container-box7-child2-subchild1-text">
                 Gathering requirements
               </p>
               <p className="cms-container-box7-child2-subchild1-text">
                 Research and planning
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Creating design
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-2">
               <p className="cms-container-box7-child2-subchild1-text">
                 Website development
               </p>
@@ -302,7 +302,7 @@ const darkTheme={
                 Website testing
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-3">
               <p
                 className="cms-container-box7-child2-subchild1-text"
                 id="cms-container-box7-child2-subchild1-text"
@@ -312,7 +312,7 @@ const darkTheme={
               <p className="cms-container-box7-child2-subchild1-text">
                 Staging site
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Launch of website
               </p>
             </div>
@@ -320,7 +320,7 @@ const darkTheme={
         </div>
         <div className="cms-container-box8">
           <div className="cms-container-box8-gradient"></div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-1">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 A
@@ -347,7 +347,7 @@ const darkTheme={
                 platform, timeline, and deliverables
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span" >
               <Button className="cms-container-box8-child1-subchild-btn">
                 C
               </Button>
@@ -361,7 +361,7 @@ const darkTheme={
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-2">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 D
@@ -389,7 +389,7 @@ const darkTheme={
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-3" >
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 F
@@ -417,7 +417,7 @@ const darkTheme={
                 bugs are identified and resolved before the website goes live
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span">
               <Button className="cms-container-box8-child1-subchild-btn">
                 H
               </Button>
@@ -521,7 +521,7 @@ const darkTheme={
               </Button>
               <h2
                 className="_five-card-container-child1-subchild-text1"
-                style={{ width: "30%" }}
+               
               >
                 Cost Effective
               </h2>

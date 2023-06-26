@@ -3,11 +3,11 @@
 import React, { useEffect } from "react";
 import "./uiux.css";
 import Image from "next/image";
-import processLine from "../../../assets/illustration_ux/process line.png"
+import processLine from "../../../assets/illustration_ux/processLine.png"
 import {Button} from "../../../utils/custom"
 import Carousel from "components/Carousel";
 import Avatar from "../../../assets/illustration/avatar.png"
-import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png"
+import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png"
 import Faq from "components/Faq";
 import { useGlobalContext } from "app/components/common/store";
 export default function Uiux() {
@@ -47,6 +47,7 @@ export default function Uiux() {
   const lightTheme={
     backgroundColor:'#F6F6F6',
     color:'#2A2A2A'
+    
   }
   const darkTheme={
     backgroundColor:'#090a0b',
@@ -249,7 +250,7 @@ Maintenance
               </Button>
               <h2
                 className="_five-card-container-child1-subchild-text1"
-                style={{ width: "30%" }}
+              
               >
              Expertise in UI/UX
 Design Services

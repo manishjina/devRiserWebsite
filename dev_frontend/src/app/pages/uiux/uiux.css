@@ -1,6 +1,6 @@
 
  #hero-section-uix-pattern {
-  background: url(../../../assets/illustration/DarkUIUXHero.png);
+  background: url(../../../assets/illustration/darkUiUxHero.png);
   background-repeat: no-repeat;
   background-position-x:100px;
 
@@ -43,7 +43,7 @@ width: 100%;
 padding-left: 15%;
 padding-right: 8%;
 position: relative;
-border: 1px solid red;
+
 }
 
 .ux-container-box1-gradeint{
@@ -120,7 +120,7 @@ padding: 0px 15% 0px 15%;
   gap: 30px;
   padding-left: 10%;
 padding-right: 3%;
-border: 1px solid red;
+
 padding-bottom: 50px;
 
 }
@@ -148,17 +148,17 @@ background: #FFF;
 }
 
 #primary-long-card-uix{
-  background: url(../../../assets/illustration_ux/long\ box.png);
+  background: url(../../../assets/illustration_ux/longBox.png);
   background-repeat: no-repeat;
   background-size: cover;
-border: 1px solid red;
+
 
 }
 #crousal-container-child2-uix{
   background: var(--uiux-color, linear-gradient(142deg, #4DB1C7 0%, #0036FF 100%));
 }
 #secondary-long-card-uix{
-  background: url(../../../assets/illustration_ux/CTA\ \(1\).png);
+  background: url(../../../assets/illustration_ux/cta.png);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -171,4 +171,117 @@ border: 1px solid red;
 
   background: #FFFF;
   color:rgba(0, 54, 255, 1) ;
+}
+
+@media only screen and (max-width: 1300px) { 
+  .ux-container-2card{
+    padding-left: 11%;
+  padding-right: 1%;
+  
+  }
+  .ux-container-2card-child1-text1{
+    font-size: 34px;
+
+  }
+  
+
+.ux-container-box1-child2-subchild1-content{
+padding: 0px;
+
+}
+
+
+
+  
+}
+
+@media only screen and (max-width: 976px) { 
+  .ux-container-2card{
+    padding-left: 5%;
+  padding-right: 5%;
+  
+  }
+
+  .ux-container-box1{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  justify-content: space-between;
+  padding-top: 80px;
+  gap: 100px;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  
+  }
+  
+
+
+  
+}
+
+
+@media only screen and (max-width: 750px) { 
+ 
+  .ux-container-2card{
+    flex-direction: column-reverse;
+    gap: 50px;
+    padding-left: 5%;
+  padding-right: 5%;
+ 
+  
+  }
+  .ux-container-2card-child1{
+    margin: auto;
+width: 100%;
+  gap:30px;
+
+  text-align: center;
+  }
+  .ux-container-2card-child1-text1{
+    margin: auto;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 0px 20px 0px 20px;
+    width: 90%;
+  }
+  
+  .ux-container-2card-child1-text2{
+    margin: auto;
+    font-size: 18px;
+    padding: 0px 20px 0px 20px;
+    width: 90%;
+
+
+  }
+  .ux-container-2card-child2{
+  width: 100%;
+  border-radius: 8px;
+  height: 400px;
+  }
+
+
+  
+}
+
+
+
+
+@media only screen and (max-width: 550px) { 
+ 
+
+  .ux-container-2card-child1-text1{
+    font-size: 24px;
+  }
+  
+  .ux-container-2card-child1-text2{
+
+    font-size: 16px
+
+  }
+
+
+
+  
 }
