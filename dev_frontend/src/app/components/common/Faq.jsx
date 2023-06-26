@@ -1,50 +1,11 @@
-// import * as React from 'react';
 
-// import {Box,Accordion,AccordionSummary,AccordionDetails,Typography} from "../utils/custom"
-
-// import MinusImg from "../assets/illustration/MinusImg.png"
-// import PlusImg from "../assets/illustration/PlusImg.png"
-// import Image from 'next/image';
-// export default function Faq() {
-//   const [expanded, setExpanded] = React.useState(false);
-
-//   const handleChange = (panel) => (event, isExpanded) => {
-//     setExpanded(isExpanded ? panel : false);
-//   };
-
-//    const arr=[{
-//     question:"what is your name",
-//     ans:"my name is manish",
-//     panel:1
-//    },{question:"what is your city name ",ans:"my city name is kahsipur",panel:2},{question:"what is your postal address",ans:"244713",panel:3}]
-
-//   return (
-//     <div >
-
-// {
-//   arr.map((elm,id)=>{
-//     return <Accordion key={id}  className="Accordian" expanded={expanded===elm.panel} onChange={handleChange(elm.panel)} >
-//       <AccordionSummary expandIcon={<Image src={expanded==='panel1'?MinusImg:PlusImg}/>     } aria-controls="panel1bh-content"
-//           id="panel1bh-header" >
-//             <Typography className='Accordian-text1' sx={{color:"red"}} >{elm.question}</Typography>
-//           </AccordionSummary>
-//           <AccordionDetails>
-//           <Typography className="Accordian-text2">{elm.ans}</Typography>
-//         </AccordionDetails>
-//     </Accordion>
-//   })
-// }
-
-//     </div>
-//   );
-// }
 
 "use client";
-import "../styles/Faq.css";
+import "../../../styles/Faq.css";
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import MinusImg from "../assets/illustration/MinusImg.png";
-import PlusImg from "../assets/illustration/PlusImg.png";
+import MinusImg from "../../../assets/illustration/MinusImg.png";
+import PlusImg from "../../../assets/illustration/PlusImg.png";
 
 import MuiAccordion from "@mui/material/Accordion";
 

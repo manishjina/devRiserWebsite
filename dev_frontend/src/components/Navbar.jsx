@@ -7,7 +7,7 @@ import { Button, Box } from "../utils/custom";
 import DevriserLogo from "../assets/navbar/light/Home.png";
 import Service from "../assets/navbar/light/service.png";
 import Light from "../assets/navbar/light/light.png";
-import Contact from "../assets/navbar/light/contactUs.png";
+import Contact from "../assets/navbar/light/contact_us.png";
 import Blog from "../assets/navbar/light/Blogs.png";
 import Solution from "../assets/navbar/light/Solutions.png";
 import About from "../assets/navbar/light/AboutUs.png";

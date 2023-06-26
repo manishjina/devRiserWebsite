@@ -1,3 +1,5 @@
+
+
 import Navbar from "../components/Navbar";
 import "./globals.css";
 import "../fonts/fonts.css";
@@ -11,11 +13,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
+ 
+
   return (
     <html lang="en">
       <body className="root">
         <GlobalContextProvider>
           <Navbar />
+
           {children}
         </GlobalContextProvider>
       </body>

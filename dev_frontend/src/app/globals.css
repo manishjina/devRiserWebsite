@@ -5,7 +5,7 @@
 }
 .root {
   font-family: "Customfont";
-  background-color: #090a0b;
+  
 }
 p {
   line-height: 35px;
@@ -129,7 +129,7 @@ a {
   background-repeat: no-repeat;
   backdrop-filter: blur(22px);
   padding: 20px 20px 20px 20px;
-  /* justify-content:center; */
+
   align-items: flex-start;
 }
 

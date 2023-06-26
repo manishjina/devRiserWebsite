@@ -5,11 +5,12 @@ import "./cms.css";
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
-import Carousel from "components/Carousel";
+import Carousel from "app/components/common/Carousel";
 import Avatar from "../../../assets/illustration/Avatar.png";
 import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
-import Faq from "components/Faq";
+import Faq from "app/components/common/Faq";
 import { useGlobalContext } from "app/components/common/store";
+import FourCard from "app/components/common/FourCard";
 export default function Cms() {
   const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
   const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
@@ -56,30 +57,32 @@ export default function Cms() {
     });
   };
 
-
-const faqContent=[
-  {
-    question:"What CMS platforms do you offer for website creation ?",ans:"We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores.",panel:"1"
-  },
-  {
-    question:"What will be the cost of the CMS development services ?",ans:"The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",panel:"2"
-  }
-  ,
-  {
-    question:"How much time will it take to create a website?",ans:"The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",panel:"3"
-  },
-  {
-    question:"Is my data secure with you?",ans:"Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",panel:"4"
-  }
-]
+  const faqContent = [
+    {
+      question: "What CMS platforms do you offer for website creation ?",
+      ans: "We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores.",
+      panel: "1",
+    },
+    {
+      question: "What will be the cost of the CMS development services ?",
+      ans: "The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",
+      panel: "2",
+    },
+    {
+      question: "How much time will it take to create a website?",
+      ans: "The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",
+      panel: "3",
+    },
+    {
+      question: "Is my data secure with you?",
+      ans: "Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",
+      panel: "4",
+    },
+  ];
   return (
     <div className="container" onClick={() => setShowSidebar(false)}>
       <div className="main-container">
-        <div
-          className="_hero-section-container"
-          id="hero-section-pattern"
-        
-        >
+        <div className="_hero-section-container" id="hero-section-pattern">
           <div className="container-gradient"></div>
           <div className="_hero-section-container-primary">
             <div className="_hero-section-container-primary-child1">
@@ -127,7 +130,7 @@ const faqContent=[
           </p>
         </div>
 
-        <div className="_grid-four-card">
+        {/* <div className="_grid-four-card">
           <div className="_grid-four-card-child">
             <h2 className="_grid-four-card-child-subchild1">Time-Efficient</h2>
             <p className="_grid-four-card-child-subchild2">
@@ -171,7 +174,8 @@ const faqContent=[
               ease
             </p>
           </div>
-        </div>
+        </div> */}
+        <FourCard />
 
         <div className="_primary-long-card">
           <h2 className="_primary-long-card-text1">

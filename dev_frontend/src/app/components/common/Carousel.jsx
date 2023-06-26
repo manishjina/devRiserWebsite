@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import "../styles/Carousel.css"
-import StarImg from "../assets/illustration/Star.png"
+import "../../../styles/Carousel.css"
+import StarImg from "../../../assets/illustration/Star.png"
 const Carousel = ({ photo,content,name,desc }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
