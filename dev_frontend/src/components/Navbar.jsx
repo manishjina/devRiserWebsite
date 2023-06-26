@@ -4,23 +4,23 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import "styles/navbar.css";
 import { Button, Box } from "../utils/custom";
-import DevriserLogo from "../assets/navbar/light/Home.png";
+import DevriserLogo from "../assets/navbar/light/home.png";
 import Service from "../assets/navbar/light/service.png";
 import Light from "../assets/navbar/light/light.png";
 import Contact from "../assets/navbar/light/contact_us.png";
-import Blog from "../assets/navbar/light/Blogs.png";
-import Solution from "../assets/navbar/light/Solutions.png";
-import About from "../assets/navbar/light/AboutUs.png";
+import Blog from "../assets/navbar/light/blogs.png";
+import Solution from "../assets/navbar/light/solutions.png";
+import About from "../assets/navbar/light/aboutUs.png";
 
 // Dark Icon
 
 import services_light from "../assets/navbar/dark/service.png"
-import light_icon from "../assets/navbar/dark/Dark.png"
-import contact_light from "../assets/navbar/dark/ContactUs.png"
-import blog_light from "../assets/navbar/dark/Blogs.png"
-import sol_light from "../assets/navbar/dark/Solutions.png"
-import about_light from "../assets/navbar/dark/AboutUs.png"
-import devriser_logo_light from "../assets/navbar/dark/devriserlogo_dark.png"
+import light_icon from "../assets/navbar/dark/dark.png"
+import contact_light from "../assets/navbar/dark/contactUs.png"
+import blog_light from "../assets/navbar/dark/blogs.png"
+import sol_light from "../assets/navbar/dark/solutions.png"
+import about_light from "../assets/navbar/dark/aboutUs.png"
+import devriser_logo_light from "../assets/navbar/dark/devriserLogoDark.png"
  
 import { Typography } from "@mui/material";
 import usa from "../assets/navbar/FlagImg/usaflagimg.png";
@@ -31,6 +31,7 @@ import arabic from "../assets/navbar/FlagImg/arabic.png";
 import { useRouter } from 'next/navigation'
 
 import { useGlobalContext } from "app/components/common/store";
+import Navbar_mobile from "./Navbar_mobile";
 
 
 const Navbar = () => {
@@ -122,9 +123,10 @@ const router=useRouter()
     setShowSidebar(false)
   }
 
+
   return (
     <>
-      <div className="main-navbar-container"  >
+    <div className="main-navbar-container _nav-1"  >
         <nav className="navbar">
           <div className="navbar-child1">
             {navArr.map((elm) => {
@@ -145,7 +147,7 @@ const router=useRouter()
                     className="navbar-child1-subchild-img"
                     src={elm.icon}
                   />
-                  <p className="navbar-child1-subchild-text">{elm.name}</p>
+                  <p className="navbar-child1-subchild-text"  style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.name}</p>
                 </div>
               );
             })}
@@ -163,6 +165,7 @@ const router=useRouter()
               <Button
                 className="navbar-child2-subchild2"
                 onClick={handelLanguageTag}
+                style={{color:theme?'#2A2A2A':'#FFFFFF'}}
               >
                 Eng
               </Button>
@@ -175,7 +178,7 @@ const router=useRouter()
               {sideBarContent.map((elm, i) => {
                 return (
                   <div onClick={()=>handelRoute(elm.routePath)} key={i}   className="navbar2-show-content">
-                   <Typography>{elm.routeName}</Typography>
+                   <Typography  style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.routeName}</Typography>
                   </div>
                 );
               })}
@@ -191,7 +194,7 @@ const router=useRouter()
                     
                   >
                     <Image src={elm.flagImg} />
-                    <Typography>{elm.country}</Typography>
+                    <Typography   style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.country}</Typography>
                   </div>
                 );
               })}
@@ -199,7 +202,9 @@ const router=useRouter()
           )}
         </nav>
       </div>
+      <div className="_nav-2"><Navbar_mobile/></div>
     </>
+            
   );
 };
 

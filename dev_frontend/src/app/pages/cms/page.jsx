@@ -4,9 +4,15 @@ import "./cms.css";
 
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
+<<<<<<< HEAD
 import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
 import Carousel from "app/components/common/Carousel";
 import Avatar from "../../../assets/illustration/Avatar.png";
+=======
+import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png";
+import Carousel from "components/Carousel";
+import Avatar from "../../../assets/illustration/avatar.png";
+>>>>>>> 6162c362008dd8120a88a2bcadce5d9a478601af
 import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
 import Faq from "app/components/common/Faq";
 import { useGlobalContext } from "app/components/common/store";
@@ -43,6 +49,9 @@ export default function Cms() {
     { x: 0, y: 0 },
   ]);
 
+
+
+
   const handleMouseMove = (index, event) => {
     const rect = event.target.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
@@ -57,6 +66,7 @@ export default function Cms() {
     });
   };
 
+<<<<<<< HEAD
   const faqContent = [
     {
       question: "What CMS platforms do you offer for website creation ?",
@@ -79,10 +89,48 @@ export default function Cms() {
       panel: "4",
     },
   ];
+=======
+
+const faqContent=[
+  {
+    question:"What CMS platforms do you offer for website creation ?",ans:"We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores.",panel:"1"
+  },
+  {
+    question:"What will be the cost of the CMS development services ?",ans:"The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",panel:"2"
+  }
+  ,
+  {
+    question:"How much time will it take to create a website?",ans:"The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",panel:"3"
+  },
+  {
+    question:"Is my data secure with you?",ans:"Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",panel:"4"
+  }
+]
+
+
+const lightTheme={
+  backgroundColor:'#F6F6F6',
+  color:'#2A2A2A'
+}
+const darkTheme={
+  backgroundColor:'#090a0b',
+  color:'#FFFFFF'
+}
+
+
+>>>>>>> 6162c362008dd8120a88a2bcadce5d9a478601af
   return (
-    <div className="container" onClick={() => setShowSidebar(false)}>
+    <div className="container" onClick={() => setShowSidebar(false)} >
       <div className="main-container">
+<<<<<<< HEAD
         <div className="_hero-section-container" id="hero-section-pattern">
+=======
+        <div
+          className="_hero-section-container"
+          id="hero-section-pattern"
+         style={theme?lightTheme:darkTheme}
+        >
+>>>>>>> 6162c362008dd8120a88a2bcadce5d9a478601af
           <div className="container-gradient"></div>
           <div className="_hero-section-container-primary">
             <div className="_hero-section-container-primary-child1">
@@ -99,7 +147,7 @@ export default function Cms() {
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn">
+                <Button className="_hero-section-container-primary-btn" >
                   Let's Begin
                 </Button>
               </div>
@@ -112,7 +160,7 @@ export default function Cms() {
 
         <div className="_secondry-section-container">
           <div>
-            <h2 className="_secondry-section-container-text1">
+            <h2 className="_secondry-section-container-text1" style={{color:'#ffff'}}>
               Elevate Your Website Creation With Our Expert CMS Development
               Services
             </h2>
@@ -194,7 +242,7 @@ export default function Cms() {
           </p>
         </div>
 
-        <div className="cms-container-box5">
+        <div className="cms-container-box5"   style={theme?lightTheme:darkTheme}>
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
           <div>
             <div className="cms-container-box5-boxbtn">
@@ -225,7 +273,7 @@ export default function Cms() {
           </div>
         </div>
 
-        <div className="cms-container-box6">
+        <div className="cms-container-box6" style={theme?lightTheme:darkTheme}>
           <div className="cms-container-box6-gradient"> </div>
           <div className="cms-container-box6-child1">
             <h2>Types Of Websites We Create With CMS</h2>
@@ -268,19 +316,19 @@ export default function Cms() {
           <h2 className="cms-container-box7-text">
             Our <span className="text-color">Process</span>
           </h2>
-          <div className="cms-container-box7-child2">
-            <div className="cms-container-box7-child2-subchild1">
+          <div className="cms-container-box7-child2 ">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-1">
               <p className="cms-container-box7-child2-subchild1-text">
                 Gathering requirements
               </p>
               <p className="cms-container-box7-child2-subchild1-text">
                 Research and planning
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Creating design
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-2">
               <p className="cms-container-box7-child2-subchild1-text">
                 Website development
               </p>
@@ -291,7 +339,7 @@ export default function Cms() {
                 Website testing
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-3">
               <p
                 className="cms-container-box7-child2-subchild1-text"
                 id="cms-container-box7-child2-subchild1-text"
@@ -301,7 +349,7 @@ export default function Cms() {
               <p className="cms-container-box7-child2-subchild1-text">
                 Staging site
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Launch of website
               </p>
             </div>
@@ -309,7 +357,7 @@ export default function Cms() {
         </div>
         <div className="cms-container-box8">
           <div className="cms-container-box8-gradient"></div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-1">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 A
@@ -336,7 +384,7 @@ export default function Cms() {
                 platform, timeline, and deliverables
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span" >
               <Button className="cms-container-box8-child1-subchild-btn">
                 C
               </Button>
@@ -350,7 +398,7 @@ export default function Cms() {
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-2">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 D
@@ -378,7 +426,7 @@ export default function Cms() {
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-3" >
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 F
@@ -406,7 +454,7 @@ export default function Cms() {
                 bugs are identified and resolved before the website goes live
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span">
               <Button className="cms-container-box8-child1-subchild-btn">
                 H
               </Button>
@@ -421,7 +469,7 @@ export default function Cms() {
           </div>
         </div>
 
-        <div className="_crousal-container">
+        <div className="_crousal-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color"> People Say </span>About Us
@@ -431,7 +479,7 @@ export default function Cms() {
           </div>
         </div>
 
-        <div className="_tertiory-section-container">
+        <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
           <div className="tertiory-section-container-gradient"></div>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
           <p className="_tertiory-section-container-text2">
@@ -441,7 +489,7 @@ export default function Cms() {
           </p>
         </div>
 
-        <div className="_five-card-container">
+        <div className="_five-card-container" style={theme?lightTheme:darkTheme}>
           <div className="_five-card-container-child1">
             <div className="_five-card-container-child1-subchild">
               <Button className="_five-card-container-child1-subchild-btn">
@@ -510,7 +558,7 @@ export default function Cms() {
               </Button>
               <h2
                 className="_five-card-container-child1-subchild-text1"
-                style={{ width: "30%" }}
+               
               >
                 Cost Effective
               </h2>
@@ -531,7 +579,7 @@ export default function Cms() {
           <Button className="_secondary-long-card-btn">Get in touch</Button>
         </div>
 
-        <div className="_faq-container">
+        <div className="_faq-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color">Asked</span> Questions
           </h2>

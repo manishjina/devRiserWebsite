@@ -1,5 +1,4 @@
 
-
 "use client";
 import "../../../styles/Faq.css";
 import * as React from "react";
@@ -11,21 +10,21 @@ import MuiAccordion from "@mui/material/Accordion";
 
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-
 import Image from "next/image";
 import { AccordionSummary } from "@mui/material";
+import { useGlobalContext } from "app/components/common/store";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  "&:not(:last-child)": {
   
-  },
   "&:before": {
     display: "none",
   },
 }));
+
+
+
 
 const exmaple_arr = [
   {
@@ -43,16 +42,24 @@ const exmaple_arr = [
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderTop: "1px solid rgba(0, 0, 0, .125)",
+  
 }));
 
 export default function Faq({faqContent=[]}) {
   const [expanded, setExpanded] = React.useState("panel1");
-
+  const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  const lightTheme={
+    backgroundColor:'#F6F6F6',
+    color:'#2A2A2A'
+  }
+  const darkTheme={
+    backgroundColor:'#090a0b',
+    color:'#FFFFFF'
+  }
   return (
     <div className="accordian-div" >
       {faqContent.length>0&&faqContent.map((elm) => {
@@ -61,6 +68,7 @@ export default function Faq({faqContent=[]}) {
             className="Accordian"
             expanded={expanded === elm.panel}
             onChange={handleChange(elm.panel)}
+            style={theme?lightTheme:darkTheme}
           >
             <AccordionSummary
               expandIcon={

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import "./globals.css";
 import "../fonts/fonts.css";
 import { GlobalContextProvider } from "./components/common/store";
-
+import Navbar_mobile from "components/Navbar_mobile";
 
 
 export const metadata = {
@@ -14,13 +14,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   
- 
-
   return (
     <html lang="en">
       <body className="root">
         <GlobalContextProvider>
-          <Navbar />
+      
+         <Navbar />
+          
+         
 
           {children}
         </GlobalContextProvider>

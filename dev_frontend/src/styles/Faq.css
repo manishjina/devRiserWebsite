@@ -1,13 +1,10 @@
 .accordian-div{
    width: 100%;
 
-   margin-bottom: 5%;
    
 }
 
 .Accordian{
-   background-color:#090A0B;
-   color:white;
    border-bottom:1px solid #A6A6A6;
  
    
@@ -17,7 +14,6 @@ border: none;
 }
 .Accordian-text1{
 flex-shrink: 0;
-color:#FFFFFF;
 font-weight: 400;
 font-size: 18px;
 padding-top: 15px;
@@ -36,4 +32,27 @@ margin-left: -15px;
     text-align: left;
    margin-left: -15px;
 
+}
+
+@media only screen and (max-width: 976px) { 
+   .Accordian-text1{
+      width: 90%;
+      
+      }
+      .Accordian-text2{
+        width: 95%;
+      
+      }
+ 
+}
+@media only screen and (max-width: 550px) { 
+   .Accordian-text1{
+      width: 90%;
+      font-size: 16px;
+      }
+      .Accordian-text2{
+        width: 95%;
+      font-size: 14px;
+      }
+ 
 }
