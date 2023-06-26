@@ -131,6 +131,8 @@ padding: 10px 0px 10px 10px;
   text-align: left;
   border-radius: 4px;
   cursor: pointer;
+
+  
 }
 .navbar2-show-content:hover{
   background:rgba(255, 255, 255, 0.2)
