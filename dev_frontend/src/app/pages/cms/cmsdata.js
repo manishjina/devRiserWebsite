@@ -1,17 +1,17 @@
 
 
-import drupal from "../../../assets/process/cmsLineUpBlack/drupal.png"
-import shopify from "../../../assets/process/cmsLineUpBlack/shopify.png"
+import drupal from "../../../assets/Process/cmsLineUpBlack/drupal.png"
+import shopify from "../../../assets/Process/cmsLineUpBlack/shopify.png"
 import wordpress from "../../../assets/process/cmsLineUpBlack/wordPress.png"
-import Webflow from "../../../assets/process/cmsLineupBlack/WebFlow.png"
-import wix from "../../../assets/process/cmsLineupBlack/wix.png"
+import Webflow from "../../../assets/Process/cmsLineupBlack/WebFlow.png"
+import wix from "../../../assets/Process/cmsLineupBlack/wix.png"
 
 
-import  drupal_white from "../../../assets/process/cmsLineupWhite/drupal.png"
-import  shopify_white from "../../../assets/process/cmsLineupWhite/shopify.png"
-import  webflow_white from "../../../assets/process/cmsLineupWhite/webFlow.png"
-import  wix_white from "../../../assets/process/cmsLineupWhite/wix.png"
-import  wordpress_white from "../../../assets/process/cmsLineupWhite/wordPress.png"
+import  drupal_white from "../../../assets/Process/cmsLineupWhite/drupal.png"
+import  shopify_white from "../../../assets/Process/cmsLineupWhite/shopify.png"
+import  webflow_white from "../../../assets/Process/cmsLineupWhite/webFlow.png"
+import  wix_white from "../../../assets/Process/cmsLineupWhite/wix.png"
+import  wordpress_white from "../../../assets/Process/cmsLineupWhite/wordPress.png"
 
 
 const ourProcessDataBlack=[{
