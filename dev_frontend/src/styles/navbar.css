@@ -131,6 +131,8 @@ padding: 10px 0px 10px 10px;
   text-align: left;
   border-radius: 4px;
   cursor: pointer;
+
+  
 }
 .navbar2-show-content:hover{
   background:rgba(255, 255, 255, 0.2)
@@ -143,7 +145,7 @@ padding: 10px 0px 10px 10px;
   gap: 25px;
   padding: 10px;
   margin-top: 5%;
-  border: 1px solid green;
+  
 }
 .navbar2-show-content-language{
   display: flex;

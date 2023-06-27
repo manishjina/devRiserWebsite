@@ -1,20 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./cms.css";
 
 import { Button } from "../../../utils/custom";
 import Image from "next/image";
-import darkIllustration from "../../../assets/illustration/laptopdarkillustration.png";
-import Carousel from "components/Carousel";
-import Avatar from "../../../assets/illustration/Avatar.png";
+import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png";
+import Carousel from "../../../components/Carousel";
+import Avatar from "../../../assets/illustration/avatar.png";
 import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
-import Faq from "components/Faq";
+import Faq from "../../../components/Faq";
 import { useGlobalContext } from "app/components/common/store";
 export default function Cms() {
   const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
   const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
   const [btnColor, setBtnColour] = useState(0);
   const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
+const [data,setData]=useState([])
 
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
@@ -30,17 +31,13 @@ export default function Cms() {
     "Master of Design, Layers",
   ];
   const handleSixbtn = (ele, id) => {
+   
     setBtnColour(ele.id);
 
     setContent(ele.content);
     setContentImg(ele.img);
   };
-  const [gradientPositions, setGradientPositions] = useState([
-    { x: null, y: null },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-  ]);
+ 
 
   const handleMouseMove = (index, event) => {
     const rect = event.target.getBoundingClientRect();
@@ -72,13 +69,34 @@ const faqContent=[
     question:"Is my data secure with you?",ans:"Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",panel:"4"
   }
 ]
+
+
+const lightTheme={
+  backgroundColor:'#F6F6F6',
+  color:'#2A2A2A'
+}
+const darkTheme={
+  backgroundColor:'#090a0b',
+  color:'#FFFFFF'
+}
+
+useEffect(()=>{
+  if(theme){
+    setData(ourProcessDataWhite)
+    }
+    else{
+      setData(ourProcessDataBlack)
+    }
+},[theme,handleSixbtn])
+
+
   return (
-    <div className="container" onClick={() => setShowSidebar(false)}>
+    <div className="container" onClick={() => setShowSidebar(false)} >
       <div className="main-container">
         <div
           className="_hero-section-container"
           id="hero-section-pattern"
-        
+         style={theme?lightTheme:darkTheme}
         >
           <div className="container-gradient"></div>
           <div className="_hero-section-container-primary">
@@ -88,7 +106,7 @@ const faqContent=[
                 <span className="text-color">CMS Development Services</span> For
                 Maximizing Your Website's Potential
               </h2>
-              <p className="_hero-section-container-primary-child1-text2">
+              <p className="_hero-section-container-primary-child1-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
                 {" "}
                 We optimize the true power of your business with our advanced
                 CMS development services. Our CMS team handles every aspect of
@@ -96,7 +114,7 @@ const faqContent=[
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn">
+                <Button className="_hero-section-container-primary-btn" style={{color:theme?'#2A2A2A':'#fff'}} >
                   Let's Begin
                 </Button>
               </div>
@@ -109,7 +127,7 @@ const faqContent=[
 
         <div className="_secondry-section-container">
           <div>
-            <h2 className="_secondry-section-container-text1">
+            <h2 className="_secondry-section-container-text1" style={{color:'#ffff'}}>
               Elevate Your Website Creation With Our Expert CMS Development
               Services
             </h2>
@@ -190,16 +208,18 @@ const faqContent=[
           </p>
         </div>
 
-        <div className="cms-container-box5">
+        <div className="cms-container-box5"   style={theme?lightTheme:darkTheme}>
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
           <div>
             <div className="cms-container-box5-boxbtn">
-              {ourProcessDataBlack.map((ele) => {
+              {data.length>0&&data.map((ele) => {
                 return (
                   <Button
                     style={{
-                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "",
-                      backgroundImage: btnColor == ele.id ? "none" : "",
+                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "" ||theme?'#E2DFD2':'',
+                      backgroundImage: btnColor == ele.id ? "none" : ""||theme?"none":'',
+                      color:theme?'#090A0B':'white',
+                     
                     }}
                     className="cms-container-box5-boxbtn-btn"
                     onClick={() => handleSixbtn(ele, ele.id)}
@@ -210,50 +230,50 @@ const faqContent=[
                 );
               })}
             </div>
-            <div className="cms-container-box5-card">
+            <div className="cms-container-box5-card" style={{background:theme?'#090A0B':'#EEE'}}>
               <Image
                 className="cms-container-box5-card-img"
                 src={contentImg}
                 alt="logo-fault"
               />
-              <p className="cms-container-box5-card-text">{contentData}</p>
+              <p className="cms-container-box5-card-text" style={{color:theme?'#FFF':'#2A2A2A'}}>{contentData}</p>
             </div>
           </div>
         </div>
 
-        <div className="cms-container-box6">
+        <div className="cms-container-box6" style={theme?lightTheme:darkTheme}>
           <div className="cms-container-box6-gradient"> </div>
           <div className="cms-container-box6-child1">
             <h2>Types Of Websites We Create With CMS</h2>
           </div>
           <div className="cms-container-box6-child2">
-            <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+            <div className="cms-container-box6-child2-subchild1" >
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Business websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Blog & news websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 E-commerce websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Real-estate websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Community websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Charity websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Portfolio websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text">
+              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
                 Educational websites
               </p>
             </div>
@@ -264,19 +284,19 @@ const faqContent=[
           <h2 className="cms-container-box7-text">
             Our <span className="text-color">Process</span>
           </h2>
-          <div className="cms-container-box7-child2">
-            <div className="cms-container-box7-child2-subchild1">
+          <div className="cms-container-box7-child2 ">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-1">
               <p className="cms-container-box7-child2-subchild1-text">
                 Gathering requirements
               </p>
               <p className="cms-container-box7-child2-subchild1-text">
                 Research and planning
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Creating design
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-2">
               <p className="cms-container-box7-child2-subchild1-text">
                 Website development
               </p>
@@ -287,7 +307,7 @@ const faqContent=[
                 Website testing
               </p>
             </div>
-            <div className="cms-container-box7-child2-subchild1">
+            <div className="cms-container-box7-child2-subchild1 order-ourProcess-3">
               <p
                 className="cms-container-box7-child2-subchild1-text"
                 id="cms-container-box7-child2-subchild1-text"
@@ -297,7 +317,7 @@ const faqContent=[
               <p className="cms-container-box7-child2-subchild1-text">
                 Staging site
               </p>
-              <p className="cms-container-box7-child2-subchild1-text">
+              <p className="cms-container-box7-child2-subchild1-text grid-ourProcess-span">
                 Launch of website
               </p>
             </div>
@@ -305,7 +325,7 @@ const faqContent=[
         </div>
         <div className="cms-container-box8">
           <div className="cms-container-box8-gradient"></div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-1">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 A
@@ -332,7 +352,7 @@ const faqContent=[
                 platform, timeline, and deliverables
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span" >
               <Button className="cms-container-box8-child1-subchild-btn">
                 C
               </Button>
@@ -346,7 +366,7 @@ const faqContent=[
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-2">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 D
@@ -374,7 +394,7 @@ const faqContent=[
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1">
+          <div className="cms-container-box8-child1 order-span-3" >
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 F
@@ -402,7 +422,7 @@ const faqContent=[
                 bugs are identified and resolved before the website goes live
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild">
+            <div className="cms-container-box8-child1-subchild grid-span">
               <Button className="cms-container-box8-child1-subchild-btn">
                 H
               </Button>
@@ -417,7 +437,7 @@ const faqContent=[
           </div>
         </div>
 
-        <div className="_crousal-container">
+        <div className="_crousal-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color"> People Say </span>About Us
@@ -427,17 +447,17 @@ const faqContent=[
           </div>
         </div>
 
-        <div className="_tertiory-section-container">
+        <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
           <div className="tertiory-section-container-gradient"></div>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
-          <p className="_tertiory-section-container-text2">
+          <p className="_tertiory-section-container-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
             Through adherence to industry-leading standards in design and
             development, we offer tailor-made CMS solutions that prioritize
             scalability, security, and effortless management
           </p>
         </div>
 
-        <div className="_five-card-container">
+        <div className="_five-card-container" style={theme?lightTheme:darkTheme}>
           <div className="_five-card-container-child1">
             <div className="_five-card-container-child1-subchild">
               <Button className="_five-card-container-child1-subchild-btn">
@@ -506,7 +526,7 @@ const faqContent=[
               </Button>
               <h2
                 className="_five-card-container-child1-subchild-text1"
-                style={{ width: "30%" }}
+               
               >
                 Cost Effective
               </h2>
@@ -527,7 +547,7 @@ const faqContent=[
           <Button className="_secondary-long-card-btn">Get in touch</Button>
         </div>
 
-        <div className="_faq-container">
+        <div className="_faq-container" style={theme?lightTheme:darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color">Asked</span> Questions
           </h2>
