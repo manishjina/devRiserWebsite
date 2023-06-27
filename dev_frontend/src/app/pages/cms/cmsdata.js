@@ -72,4 +72,5 @@ const ourProcessDataWhite=[{
     content:"Shopify is a powerful e-commerce platform with diverse features to construct and oversee online stores. Devriser experts harness the extensive capabilities to craft excellent websites tailored to your specific business requirements. We ensure seamless integration, intuitive navigation, and optimized performance, resulting in an elevated shopping experience"
 }]
 
+
 export  {ourProcessDataWhite,ourProcessDataBlack}
