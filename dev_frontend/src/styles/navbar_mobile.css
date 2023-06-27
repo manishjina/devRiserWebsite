@@ -12,23 +12,140 @@ align-items: center;
 padding: 5%;
 gap: 30px;
 
+
 }
 .Navbar-res-container-child1{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: auto;
+
 }
 .Navbar-res-container-child1-homeimg{
 width: 25px;
+cursor: pointer;
 height: 25px;
 }
 .Navbar-res-container-child1-btn{
     text-transform: none;
     border-radius: 4px;
-    border: 1px solid #FFF;
     padding-left: 15px;
     padding-right: 15px;
-    color: #FFF;
     font-size: 10px;
+cursor: pointer;
+
+
+
+}
+
+
+.navbar-res-show{
+    position: fixed;
+  padding:0px 6px 0px 6px;
+  min-height: 100vh;
+  height: 100%;
+ width: 100%;
+ overflow: scroll;
+ left: 0px;
+ top: 0;
+ background: linear-gradient(180deg, rgba(255, 255, 255, 0.23) 0%, rgba(70, 70, 70, 0.12) 100%);
+ backdrop-filter: blur(30.5px);
+ display: flex;
+ flex-direction: column;
+ gap: 40px;
+z-index: 1;
+}
+
+.navbar-res-show-child1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar-res-show-child2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:30px;
+    padding: 20px;
+}
+.navbar-res-show-child2-subchild{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 100px;
+}
+
+.navbar-res-show-child2-subchild-text{
+
+font-size: 20px;
+
+}
+.drowUpDown{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services_dropData{
+    margin-left: 150px;
+}
+.services_dropData-text{
+    font-size: 18px;
+    line-height: 40px;
+}
+
+
+.navbar-res-show-child3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.navbar-res-show-child3-btn{
+    text-transform: none;
+    padding: 5px 20px 5px 20px;
+    width: 200px;
+    font-size: 20px;
+ 
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 550px) { 
+    .navbar-res-show{
+     gap: 10px;
+    }
+
+    .navbar-res-show-child2{
+    
+        gap:10px;
+    
+    }
+    .navbar-res-show-child2-subchild{
+       
+        gap: 50px;
+        
+    }
+    .navbar-res-show-child2-subchild-text{
+    
+    font-size: 18px;
+    
+    }
+    .drowUpDown{
+        width:210px;
+
+    }
+    .services_dropData{
+        margin-left: 100px;
+    }
+    .services_dropData-text{
+ 
+        font-size: 16px;
+        line-height: 35px;
+    }
+    
 }
