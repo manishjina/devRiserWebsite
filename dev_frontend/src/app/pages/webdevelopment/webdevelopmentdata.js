@@ -1,5 +1,3 @@
-
-
 import drupal from "../../../assets/Process/cmsLineUpBlack/drupal.png"
 import shopify from "../../../assets/Process/cmsLineUpBlack/shopify.png"
 import wordpress from "../../../assets/process/cmsLineUpBlack/wordPress.png"

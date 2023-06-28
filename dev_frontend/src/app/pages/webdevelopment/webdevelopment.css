@@ -5,7 +5,31 @@
   background-repeat: no-repeat;
   background-position-x: 100px;
 }
+#hero-section-pattern-web {
+  position: relative;
 
+  background: url(../../../assets/illustration/Pattern.png);
+  background-repeat: no-repeat;
+  background-position-x: 100px;
+  background-position: center;
+}
+
+#hero-section-pattern::after {
+  content: "";
+  position: absolute;
+
+  display: block;
+  background-color: #090a0b;
+
+  z-index: -1;
+}
+
+.text-color-web{
+  background: linear-gradient(.25turn, rgba(80, 22, 204, 1),rgba(247, 161, 208, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 #hero-section-pattern::after {
   content: "";
   position: absolute;
@@ -899,3 +923,4 @@
     line-height: 211.2%;
   }
 }
+
