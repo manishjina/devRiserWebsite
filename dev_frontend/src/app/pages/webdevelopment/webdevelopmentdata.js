@@ -1,17 +1,6 @@
 
 
-// import drupal from "../../../assets/Process/cmsLineUpBlack/drupal.png"
-// import shopify from "../../../assets/Process/cmsLineUpBlack/shopify.png"
-// import wordpress from "../../../assets/Process/cmsLineUpBlack/wordPress.png"
-// import Webflow from "../../../assets/Process/cmsLineUpBlack/WebFlow.png"
-// import wix from "../../../assets/Process/cmsLineUpBlack/wix.png"
 
-
-// import  drupal_white from "../../../assets/Process/cmsLineUpWhite/drupal.png"
-// import  shopify_white from "../../../assets/Process/cmsLineUpWhite/shopify.png"
-// import  webflow_white from "../../../assets/Process/cmsLineUpWhite/webFlow.png"
-// import  wix_white from "../../../assets/Process/cmsLineUpWhite/wix.png"
-// import  wordpress_white from "../../../assets/Process/cmsLineUpWhite/wordPress.png"
 
 
 // const ourProcessDataBlack=[{
