@@ -1,26 +1,125 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./cms.css";
 
 import { Button } from "../../../utils/custom";
-import Image from "next/image";
-import darkIllustration from "../../../assets/illustration/laptopDarkIllustration.png";
+import { Drupal, Shopify, Webflow, Wix, Wordpress } from "asset1/cms_svg";
+
 import Carousel from "../../../components/Carousel";
 import Avatar from "../../../assets/illustration/avatar.png";
-import { ourProcessDataBlack, ourProcessDataWhite } from "./cmsdata";
+
 import Faq from "../../../components/Faq";
 import { useGlobalContext } from "app/components/common/store";
+import { Hero, HeroLight, Pattern } from "asset1/cms_svg/index";
+import FourCard from "@/app/components/common/FourCard";
+import { LineConnectorLg } from "../../../asset1/index";
 export default function Cms() {
-  const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
-  const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
+  const { showSidebar, setShowSidebar, theme } = useGlobalContext();
+
+  const ourProcessDataBlack = [
+    {
+      id: 0,
+      btnName: "Wordpress",
+      img: <Wordpress fill="white" />,
+      content:
+        "WordPress is a renowned CMS platform known for its versatility and user-friendly interface. At DevRiser, we use vast plugin libraries of WordPress to customize various websites for you, whether it is blogs, business sites, e-commerce stores, portfolios, or forums. We use responsive designs to enhance your user engagement and accessibility across various devices",
+    },
+    {
+      id: 1,
+      btnName: "Drupal",
+      img: <Drupal fill="white" />,
+      content:
+        " Drupal is a robust and highly flexible content management system (CMS) known for its extensive customization options and scalability. At Devriser, we use Drupal website development services and create exceptional websites with their flexible architecture, extensive module library, and intuitive administration interface. This allows us to tailor websites precisely to our client's needs, ensuring optimal performance, scalability, and an exceptional user experience",
+    },
+    {
+      id: 2,
+      btnName: "Wix",
+      img: <Wix fill="white" />,
+      content:
+        "Wix is a powerful and user-friendly website builder with professional templates, customizable elements, and an app market for added functionalities. We at Devriser utilize its intuitive tools, reliable hosting, mobile optimization, and SEO capabilities to provide you with a unique website that delivers an outstanding online experience",
+    },
+    {
+      id: 3,
+      btnName: "Webflow",
+      img: <Webflow fill="white" />,
+      content:
+        " Webflow is one of the best platforms for CMS website development. It is known for its intuitive visual editor and robust features. At Devriser, we leverage its seamless design capabilities, responsive layouts, built-in SEO tools, and extensive template library to create visually stunning websites which align with your goals and objectives",
+    },
+    {
+      id: 4,
+      btnName: "Shopify",
+      img: <Shopify fill="white" />,
+      content:
+        "Shopify is a powerful e-commerce platform with diverse features to construct and oversee online stores. Devriser experts harness the extensive capabilities to craft excellent websites tailored to your specific business requirements. We ensure seamless integration, intuitive navigation, and optimized performance, resulting in an elevated shopping experience",
+    },
+  ];
+
+  const ourProcessDataWhite = [
+    {
+      id: 0,
+      btnName: "Wordpress",
+      img: <Wordpress fill="black" />,
+      content:
+        "WordPress is a renowned CMS platform known for its versatility and user-friendly interface. At DevRiser, we use vast plugin libraries of WordPress to customize various websites for you, whether it is blogs, business sites, e-commerce stores, portfolios, or forums. We use responsive designs to enhance your user engagement and accessibility across various devices",
+    },
+    {
+      id: 1,
+      btnName: "Drupal",
+      img: <Drupal fill="black" />,
+      content:
+        " Drupal is a robust and highly flexible content management system (CMS) known for its extensive customization options and scalability. At Devriser, we use Drupal website development services and create exceptional websites with their flexible architecture, extensive module library, and intuitive administration interface. This allows us to tailor websites precisely to our client's needs, ensuring optimal performance, scalability, and an exceptional user experience",
+    },
+    {
+      id: 2,
+      btnName: "Wix",
+      img: <Wix fill="black" />,
+      content:
+        "Wix is a powerful and user-friendly website builder with professional templates, customizable elements, and an app market for added functionalities. We at Devriser utilize its intuitive tools, reliable hosting, mobile optimization, and SEO capabilities to provide you with a unique website that delivers an outstanding online experience",
+    },
+    {
+      id: 3,
+      btnName: "Webflow",
+      img: <Webflow fill="black" />,
+      content:
+        " Webflow is one of the best platforms for CMS website development. It is known for its intuitive visual editor and robust features. At Devriser, we leverage its seamless design capabilities, responsive layouts, built-in SEO tools, and extensive template library to create visually stunning websites which align with your goals and objectives",
+    },
+    {
+      id: 4,
+      btnName: "Shopify",
+      img: <Shopify fill="black" />,
+      content:
+        "Shopify is a powerful e-commerce platform with diverse features to construct and oversee online stores. Devriser experts harness the extensive capabilities to craft excellent websites tailored to your specific business requirements. We ensure seamless integration, intuitive navigation, and optimized performance, resulting in an elevated shopping experience",
+    },
+  ];
+
   const [btnColor, setBtnColour] = useState(0);
-  const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
-const [data,setData]=useState([])
 
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
     "I Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
     "I hate the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+  ];
+  const gridFourCard = [
+    {
+      heading: "Time-Efficient",
+      content:
+        " Our team specializes in creating user-friendly CMS websites that areeasy to manage. We harness the power of CMS platforms to accelerate the website creation process, allowing you to have a fully functionalwebsite in significantly less time compared to traditional code-basedmethods",
+    },
+    {
+      heading: "Cost-Effective",
+      content:
+        "Our team specializes in creating user-friendly CMS websites that are easy to manage. We harness the power of CMS platforms to accelerate the website creation process, allowing you to have a fully functional website in significantly less time compared to traditional code-based methods",
+    },
+    {
+      heading: "Responsive Design",
+      content:
+        "Our websites seamlessly adapt to all devices, ensuring exceptional user experiences. Through responsive design, we optimize layouts and functionality for optimal viewing and interaction. Experience effortless compatibility across screens, from big screens to laptops and from mobiles to tablets",
+    },
+    {
+      heading: "Easy to manage",
+      content:
+        "  Simplify website management with our user-friendly interfaces. Our expertly crafted websites eliminate complexities, empowering you to effortlessly update and maintain your online presence. Experience seamless control and keep your website up-to-date with ease",
+    },
   ];
 
   const photo = [Avatar, Avatar, Avatar];
@@ -30,83 +129,68 @@ const [data,setData]=useState([])
     "SubHead of Design, Layers",
     "Master of Design, Layers",
   ];
-  const handleSixbtn = (ele, id) => {
-   
-    setBtnColour(ele.id);
+  const [id, setId] = useState(0);
 
-    setContent(ele.content);
-    setContentImg(ele.img);
-  };
- 
-
-  const handleMouseMove = (index, event) => {
-    const rect = event.target.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    const gradientX = (mouseX / rect.width) * 100;
-    const gradientY = (mouseY / rect.height) * 100;
-
-    setGradientPositions((prevState) => {
-      const updatedPositions = [...prevState];
-      updatedPositions[index] = { x: gradientX, y: gradientY };
-      return updatedPositions;
-    });
+  const handleSixbtn = (elm, id) => {
+    setBtnColour(id);
+    setId(id);
   };
 
+  const faqContent = [
+    {
+      question: "What CMS platforms do you offer for website creation ?",
+      ans: "We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores.",
+      panel: "1",
+    },
+    {
+      question: "What will be the cost of the CMS development services ?",
+      ans: "The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",
+      panel: "2",
+    },
+    {
+      question: "How much time will it take to create a website?",
+      ans: "The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",
+      panel: "3",
+    },
+    {
+      question: "Is my data secure with you?",
+      ans: "Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",
+      panel: "4",
+    },
+  ];
 
-const faqContent=[
-  {
-    question:"What CMS platforms do you offer for website creation ?",ans:"We offer website creation services through popular CMS platforms like WordPress, Drupal, Webflow, Wix, and Shopify. These platforms provide flexible and scalable solutions which help us to create different types of websites, from simple blogs to complex e-commerce stores.",panel:"1"
-  },
-  {
-    question:"What will be the cost of the CMS development services ?",ans:"The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",panel:"2"
-  }
-  ,
-  {
-    question:"How much time will it take to create a website?",ans:"The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",panel:"3"
-  },
-  {
-    question:"Is my data secure with you?",ans:"Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",panel:"4"
-  }
-]
-
-
-const lightTheme={
-  backgroundColor:'#F6F6F6',
-  color:'#2A2A2A'
-}
-const darkTheme={
-  backgroundColor:'#090a0b',
-  color:'#FFFFFF'
-}
-
-useEffect(()=>{
-  if(theme){
-    setData(ourProcessDataWhite)
-    }
-    else{
-      setData(ourProcessDataBlack)
-    }
-},[theme,handleSixbtn])
-
+  const lightTheme = {
+    backgroundColor: "#F6F6F6",
+    color: "#2A2A2A",
+  };
+  const darkTheme = {
+    backgroundColor: "#090a0b",
+    color: "#FFFFFF",
+  };
 
   return (
-    <div className="container" onClick={() => setShowSidebar(false)} >
+    <div className="_container" onClick={() => setShowSidebar(false)}>
       <div className="main-container">
         <div
           className="_hero-section-container"
-          id="hero-section-pattern"
-         style={theme?lightTheme:darkTheme}
+          style={theme ? lightTheme : darkTheme}
         >
-          <div className="container-gradient"></div>
-          <div className="_hero-section-container-primary">
+          <div
+            className="_hero-section-container-primary"
+            style={{ border: "1px solid red" }}
+          >
+            <Pattern id="hero-section-pattern" />
+            <div className="container-gradient"></div>
             <div className="_hero-section-container-primary-child1">
               <h2 className="_hero-section-container-primary-child1-text1">
                 Advanced{" "}
                 <span className="text-color">CMS Development Services</span> For
                 Maximizing Your Website's Potential
               </h2>
-              <p className="_hero-section-container-primary-child1-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
+              <p
+                className="_hero-section-container-primary-child1-text2"
+                style={{ color: theme ? "#2A2A2A" : "#B1B2B2" }}
+              >
                 {" "}
                 We optimize the true power of your business with our advanced
                 CMS development services. Our CMS team handles every aspect of
@@ -114,20 +198,27 @@ useEffect(()=>{
                 presence that maximizes your website's potential
               </p>
               <div>
-                <Button className="_hero-section-container-primary-btn" style={{color:theme?'#2A2A2A':'#fff'}} >
+                <Button
+                  className="_hero-section-container-primary-btn"
+                  style={{ color: theme ? "#2A2A2A" : "#fff" }}
+                >
                   Let's Begin
                 </Button>
               </div>
             </div>
             <div className="_hero-section-container-primary-child2">
-              <Image src={darkIllustration} />
+              {/* <Image src={darkIllustration} /> */}
+              <Hero />
             </div>
           </div>
         </div>
 
         <div className="_secondry-section-container">
           <div>
-            <h2 className="_secondry-section-container-text1" style={{color:'#ffff'}}>
+            <h2
+              className="_secondry-section-container-text1"
+              style={{ color: "#ffff" }}
+            >
               Elevate Your Website Creation With Our Expert CMS Development
               Services
             </h2>
@@ -145,51 +236,7 @@ useEffect(()=>{
           </p>
         </div>
 
-        <div className="_grid-four-card">
-          <div className="_grid-four-card-child">
-            <h2 className="_grid-four-card-child-subchild1">Time-Efficient</h2>
-            <p className="_grid-four-card-child-subchild2">
-              Our team specializes in creating user-friendly CMS websites that
-              are easy to manage. We harness the power of CMS platforms to
-              accelerate the website creation process, allowing you to have a
-              fully functional website in significantly less time compared to
-              traditional code-based methods
-            </p>
-          </div>
-          <div className="_grid-four-card-child">
-            <h2 className="_grid-four-card-child-subchild1"> Cost-Effective</h2>
-            <p className="_grid-four-card-child-subchild2">
-              Unlock business growth without compromising quality with our
-              cost-conscious CMS web development services. Enjoy a high-quality,
-              feature-rich website that fits your budget, delivering financial
-              advantages for your online presence. Experience streamlined
-              development and maximize your business's potential
-            </p>
-          </div>
-          <div className="_grid-four-card-child">
-            <h2 className="_grid-four-card-child-subchild1">
-              {" "}
-              Responsive Design
-            </h2>
-            <p className="_grid-four-card-child-subchild2">
-              adapt to all devices, ensuring exceptional user experiences.
-              Through responsive design, we optimize layouts and functionality
-              for optimal viewing and interaction. Experience effortless
-              compatibility across screens, from big screens to laptops and from
-              mobiles to tablets{" "}
-            </p>
-          </div>
-          <div className="_grid-four-card-child">
-            <h2 className="_grid-four-card-child-subchild1">Easy to manage</h2>
-            <p className="_grid-four-card-child-subchild2">
-              Simplify website management with our user-friendly interfaces. Our
-              expertly crafted websites eliminate complexities, empowering you
-              to effortlessly update and maintain your online presence.
-              Experience seamless control and keep your website up-to-date with
-              ease
-            </p>
-          </div>
-        </div>
+        <FourCard gridFourCard={gridFourCard} />
 
         <div className="_primary-long-card">
           <h2 className="_primary-long-card-text1">
@@ -208,72 +255,137 @@ useEffect(()=>{
           </p>
         </div>
 
-        <div className="cms-container-box5"   style={theme?lightTheme:darkTheme}>
+        <div
+          className="cms-container-box5"
+          style={theme ? lightTheme : darkTheme}
+        >
           <h2 className="cms-container-box5-text">Meet Our CMS Lineups</h2>
           <div>
             <div className="cms-container-box5-boxbtn">
-              {data.length>0&&data.map((ele) => {
+              {ourProcessDataBlack.map((elm) => {
                 return (
                   <Button
                     style={{
-                      backgroundColor: btnColor == ele.id ? "#E77BA6" : "" ||theme?'#E2DFD2':'',
-                      backgroundImage: btnColor == ele.id ? "none" : ""||theme?"none":'',
-                      color:theme?'#090A0B':'white',
-                     
+                      backgroundColor:
+                        btnColor == elm.id
+                          ? "#E77BA6"
+                          : "" || theme
+                          ? "#E2DFD2"
+                          : "",
+                      backgroundImage:
+                        btnColor == elm.id ? "none" : "" || theme ? "none" : "",
+                      color: theme ? "#090A0B" : "white",
                     }}
                     className="cms-container-box5-boxbtn-btn"
-                    onClick={() => handleSixbtn(ele, ele.id)}
-                    key={ele.id}
+                    onClick={() => handleSixbtn(elm, elm.id)}
+                    key={elm.id}
                   >
-                    {ele.btnName}
+                    {elm.btnName}
                   </Button>
                 );
               })}
             </div>
-            <div className="cms-container-box5-card" style={{background:theme?'#090A0B':'#EEE'}}>
-              <Image
-                className="cms-container-box5-card-img"
-                src={contentImg}
-                alt="logo-fault"
-              />
-              <p className="cms-container-box5-card-text" style={{color:theme?'#FFF':'#2A2A2A'}}>{contentData}</p>
+            <div
+              className="cms-container-box5-card"
+              style={{ background: theme ? "#090A0B" : "#EEE" }}
+            >
+              {theme
+                ? ourProcessDataBlack[id].img
+                : ourProcessDataWhite[id].img}
+              <p
+                className="cms-container-box5-card-text"
+                style={{ color: theme ? "#FFF" : "#2A2A2A" }}
+              >
+                {ourProcessDataBlack[id]?.content}
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="cms-container-box6" style={theme?lightTheme:darkTheme}>
+        <div
+          className="cms-container-box6"
+          style={theme ? lightTheme : darkTheme}
+        >
           <div className="cms-container-box6-gradient"> </div>
           <div className="cms-container-box6-child1">
             <h2>Types Of Websites We Create With CMS</h2>
           </div>
           <div className="cms-container-box6-child2">
-            <div className="cms-container-box6-child2-subchild1" >
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+            <div className="cms-container-box6-child2-subchild1">
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Business websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Blog & news websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 E-commerce websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Real-estate websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Community websites
               </p>
             </div>
             <div className="cms-container-box6-child2-subchild1">
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Charity websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Portfolio websites
               </p>
-              <p className="cms-container-box6-child2-subchild1-text" style={{background:theme?"none":'',border:theme?"1px solid black":''}}>
+              <p
+                className="cms-container-box6-child2-subchild1-text"
+                style={{
+                  background: theme ? "none" : "",
+                  border: theme ? "1px solid black" : "",
+                }}
+              >
                 Educational websites
               </p>
             </div>
@@ -281,9 +393,13 @@ useEffect(()=>{
         </div>
 
         <div className="cms-container-box7">
+         
           <h2 className="cms-container-box7-text">
+         
             Our <span className="text-color">Process</span>
           </h2>
+          <LineConnectorLg 
+          id='line-connector' />
           <div className="cms-container-box7-child2 ">
             <div className="cms-container-box7-child2-subchild1 order-ourProcess-1">
               <p className="cms-container-box7-child2-subchild1-text">
@@ -352,7 +468,7 @@ useEffect(()=>{
                 platform, timeline, and deliverables
               </p>
             </div>
-            <div className="cms-container-box8-child1-subchild grid-span" >
+            <div className="cms-container-box8-child1-subchild grid-span">
               <Button className="cms-container-box8-child1-subchild-btn">
                 C
               </Button>
@@ -394,7 +510,7 @@ useEffect(()=>{
               </p>
             </div>
           </div>
-          <div className="cms-container-box8-child1 order-span-3" >
+          <div className="cms-container-box8-child1 order-span-3">
             <div className="cms-container-box8-child1-subchild">
               <Button className="cms-container-box8-child1-subchild-btn">
                 F
@@ -437,7 +553,10 @@ useEffect(()=>{
           </div>
         </div>
 
-        <div className="_crousal-container" style={theme?lightTheme:darkTheme}>
+        <div
+          className="_crousal-container"
+          style={theme ? lightTheme : darkTheme}
+        >
           <h2 className="_crousal-container-child1">
             {" "}
             What<span className="text-color"> People Say </span>About Us
@@ -447,17 +566,26 @@ useEffect(()=>{
           </div>
         </div>
 
-        <div className="_tertiory-section-container" style={theme?lightTheme:darkTheme}>
+        <div
+          className="_tertiory-section-container"
+          style={theme ? lightTheme : darkTheme}
+        >
           <div className="tertiory-section-container-gradient"></div>
           <h2 className="_tertiory-section-container-text1">Why Choose Us</h2>
-          <p className="_tertiory-section-container-text2" style={{color:theme?'#2A2A2A':'#B1B2B2'}}>
+          <p
+            className="_tertiory-section-container-text2"
+            style={{ color: theme ? "#2A2A2A" : "#B1B2B2" }}
+          >
             Through adherence to industry-leading standards in design and
             development, we offer tailor-made CMS solutions that prioritize
             scalability, security, and effortless management
           </p>
         </div>
 
-        <div className="_five-card-container" style={theme?lightTheme:darkTheme}>
+        <div
+          className="_five-card-container"
+          style={theme ? lightTheme : darkTheme}
+        >
           <div className="_five-card-container-child1">
             <div className="_five-card-container-child1-subchild">
               <Button className="_five-card-container-child1-subchild-btn">
@@ -524,10 +652,7 @@ useEffect(()=>{
               <Button className="_five-card-container-child1-subchild-btn">
                 E
               </Button>
-              <h2
-                className="_five-card-container-child1-subchild-text1"
-               
-              >
+              <h2 id="costeffective" className="_five-card-container-child1-subchild-text1">
                 Cost Effective
               </h2>
               <p className="_five-card-container-child1-subchild-text2">
@@ -544,10 +669,10 @@ useEffect(()=>{
           <h2 className="_secondary-long-card-text">
             Let's Build Your Dream Website
           </h2>
-          <Button className="_secondary-long-card-btn">Get in touch</Button>
+          <Button className="_secondary-long-card-btn"><p className="secondary-long-card-btn-text" >Get in touch</p></Button>
         </div>
 
-        <div className="_faq-container" style={theme?lightTheme:darkTheme}>
+        <div className="_faq-container" style={theme ? lightTheme : darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color">Asked</span> Questions
           </h2>

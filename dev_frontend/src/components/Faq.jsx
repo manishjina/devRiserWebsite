@@ -1,4 +1,3 @@
-
 "use client";
 import "@/styles/Faq.css";
 import * as React from "react";
@@ -17,14 +16,10 @@ import { useGlobalContext } from "app/components/common/store";
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  
   "&:before": {
     display: "none",
   },
 }));
-
-
-
 
 const exmaple_arr = [
   {
@@ -42,51 +37,58 @@ const exmaple_arr = [
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  
 }));
 
-export default function Faq({faqContent=[]}) {
+export default function Faq({ faqContent = [] }) {
   const [expanded, setExpanded] = React.useState("panel1");
   const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  const lightTheme={
-    backgroundColor:'#F6F6F6',
-    color:'#2A2A2A'
-  }
-  const darkTheme={
-    backgroundColor:'#090a0b',
-    color:'#FFFFFF'
-  }
+  const lightTheme = {
+    backgroundColor: "#F6F6F6",
+    color: "#2A2A2A",
+  };
+  const darkTheme = {
+    backgroundColor: "#090a0b",
+    color: "#FFFFFF",
+  };
   return (
-    <div className="accordian-div" >
-      {faqContent.length>0&&faqContent.map((elm) => {
-        return (
-          <Accordion
-            className="Accordian"
-            expanded={expanded === elm.panel}
-            onChange={handleChange(elm.panel)}
-            style={theme?lightTheme:darkTheme}
-          >
-            <AccordionSummary
-              expandIcon={
-                <Image src={expanded === elm.panel ? MinusImg : PlusImg} />
-              }
-              aria-controls="panel1d-content"
-              id="panel1d-header"
+    <div className="accordian-div">
+      {faqContent.length > 0 &&
+        faqContent.map((elm) => {
+          return (
+            <Accordion
+              className="Accordian"
+              expanded={expanded === elm.panel}
+              onChange={handleChange(elm.panel)}
+              style={theme ? lightTheme : darkTheme}
             >
-              <Typography className="Accordian-text1">
-                {elm.question}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography className="Accordian-text2">{elm.ans}</Typography>
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+              <AccordionSummary
+            sx={{
+              
+            }}
+                
+                expandIcon={
+                  <Image
+                    src={expanded === elm.panel ? PlusImg : MinusImg}
+                    
+                  />
+                }
+                aria-controls="panel1d-content"
+               
+              >
+                <Typography className="Accordian-text1">
+                  {elm.question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className="Accordian-text2">{elm.ans}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
     </div>
   );
 }

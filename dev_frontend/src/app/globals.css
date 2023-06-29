@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+._container{
+  margin-left: 95px;
+  border:3px solid red;
+
+}
 
 
 
@@ -32,6 +37,13 @@ a {
   ._nav-1{
 display: none;
   }
+  ._container{
+
+    border:3px solid red;
+    margin-left: 0px;
+    
+  }
+
   
 }
 
@@ -41,7 +53,10 @@ display: none;
 display: none;
   }
   
+
+  
 }
+
 
 
 ._hero-section-container {
@@ -54,7 +69,7 @@ display: none;
   gap: 50px;
  margin: auto;
  
- padding-left: 10%;
+ padding-left: 3%;
  padding-right: 3%;
 }
 
@@ -63,10 +78,9 @@ display: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
- 
- 
-
+  gap: 100px;  
+  height:100vh;
+  position: relative;
 }
 ._hero-section-container-primary-child1 {
   width: 60%;
@@ -106,7 +120,7 @@ display: none;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding-left: 10%;
+  padding-left: 3%;
   padding-top: 20px;
   padding-right: 3%;
 
@@ -137,7 +151,7 @@ padding-top: 50px;
   padding-bottom: 100px;
 
   width: 100%;
-  padding-left: 15%;
+  padding-left: 10%;
   padding-right: 10%;
 
 
@@ -158,6 +172,21 @@ padding-top: 50px;
   backdrop-filter: blur(22px);
   padding: 20px 20px 20px 20px;
   align-items: flex-start;
+  position: relative;
+}
+._grid-hover{
+
+background-color: red;
+position: absolute;
+border:3px solid red;
+top: 0px;
+height: 500px;
+width: 500px;
+
+}
+._grid-four-card-child:hover h2,
+._grid-four-card-child:hover p {
+  visibility: visible;
 }
 
 ._grid-four-card-child-subchild1 {
@@ -172,19 +201,23 @@ padding-top: 50px;
 }
 
 ._primary-long-card {
+  margin: auto;
   background: url(../assets/illustration/longCms.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
-padding-left: 10%;
+ 
+ border:1px solid red;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  width: 100%;
+padding-left: 3%;
 padding-right: 3%;
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   gap: 30px;
-
-
 }
 ._primary-long-card-text1 {
   font-weight: 600;
@@ -208,11 +241,9 @@ padding-right: 3%;
   gap: 50px;
   align-items: center;
   justify-content: center;
-  padding-left: 10%;
-  padding-right: 3%;
+ 
 
 
-  padding-right: 3%;
 }
 ._crousal-container-child1 {
   font-weight: 600;
@@ -226,9 +257,8 @@ padding-right: 3%;
   justify-content: center;
   background: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
 
-  margin-left: -10%;
-  margin-right: -5%;
-  padding-left: 10%;
+
+  padding-left: 3%;
   padding-right: 3%;
   height: 450px;
 }
@@ -242,7 +272,7 @@ padding-right: 3%;
   text-align: center;
 position: relative;
   align-items: center;
-  padding-left: 10%;
+  padding-left: 3%;
   padding-right: 3%;
 
 
@@ -268,7 +298,7 @@ position: relative;
 
   justify-content: center;
   align-items: center;
-  padding-left: 10%;
+  padding-left: 3%;
   padding-right: 3%;
 }
 ._five-card-container-child1 {
@@ -298,6 +328,7 @@ position: relative;
 ._five-card-container-child1-subchild-text1 {
   width: 70%;
   font-weight: 600;
+
   font-size: 24px;
   line-height: 35px;
   background: linear-gradient(98.71deg, #ed958d -42.87%, #cd1bfb 207.31%);
@@ -354,7 +385,7 @@ padding-right:3% ;
   gap: 80px;
   justify-content: center;
   align-items: center;
-  padding-left: 10%;
+  padding-left: 3%;
   padding-right: 3%;
 
 }
@@ -377,8 +408,8 @@ padding-right:3% ;
 
    ._hero-section-container {
     gap: 50px;
-    padding-left: 12%;
-    padding-right: 3%;
+    padding-left: 3%;
+    padding-right:3%;
    
   }
   ._hero-section-container-primary {
@@ -400,8 +431,8 @@ padding-right:3% ;
  
   
 ._secondry-section-container {
-padding-left: 12%;
-padding-right: 4%;
+padding-left: 3%;
+padding-right: 3%;
 
 }
 
@@ -413,15 +444,16 @@ padding-right: 4%;
 }
 
 ._grid-four-card {
-  padding-left: 12%;
-  padding-right: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
 
 
 }
 
 ._grid-four-card-child {
   gap: 25px;
-height: 400px;
+height: 360px;
+padding-bottom: 10px;
 }
 
 ._grid-four-card-child-subchild1 {
@@ -432,8 +464,8 @@ height: 400px;
 }
 
 ._primary-long-card {
-padding-left: 11%;
-padding-right: 2%;
+padding-left: 3%;
+padding-right: 3%;
   gap: 30px;
 
 
@@ -454,8 +486,8 @@ padding-right: 2%;
 }
 ._faq-container {
   padding-top: 80px;
-  padding-left: 10%;
-  padding-right: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
 
 }
 }
@@ -466,8 +498,8 @@ padding-right: 2%;
     flex-direction: column-reverse;
     gap: 50px;
     ;
-    padding-left: 10%;
-    padding-right: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   ._five-card-container-child1 {
     
@@ -489,8 +521,8 @@ padding-right: 2%;
   justify-content: center;
   gap: 50px;
  text-align: center;
- padding-left: 5%;
- padding-right: 5%;
+ padding-left: 3%;
+ padding-right: 3%;
  padding-top: 80px;
 }
 
@@ -521,8 +553,8 @@ padding-right: 2%;
 
 ._secondry-section-container {
   gap: 30px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
 padding-top: 50px;
 }
 
@@ -562,8 +594,8 @@ padding-top: 50px;
 }
 ._primary-long-card {
   height: 500px;
-padding-left: 8%;
-padding-right: 8%;
+padding-left: 3%;
+padding-right: 3%;
   gap: 30px;
 
 
@@ -578,8 +610,8 @@ padding-right: 8%;
 
 ._crousal-container {
   padding-top: 80px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
 
 
 }
@@ -587,10 +619,9 @@ padding-right: 8%;
   font-size: 28px;
 }
 ._crousal-container-child2 {
-  margin-left: -12%;
-  margin-right:-12%;
-  padding-left: 12%;
-  padding-right: 12%;
+  
+  padding-left: 3%;
+  padding-right:3%;
   height: 450px;
 }
 

@@ -14,32 +14,31 @@ import About from "../assets/navbar/light/aboutUs.png";
 
 // Dark Icon
 
-import services_light from "../assets/navbar/dark/service.png"
-import light_icon from "../assets/navbar/dark/dark.png"
-import contact_light from "../assets/navbar/dark/contactUs.png"
-import blog_light from "../assets/navbar/dark/blogs.png"
-import sol_light from "../assets/navbar/dark/solutions.png"
-import about_light from "../assets/navbar/dark/aboutUs.png"
-import devriser_logo_light from "../assets/navbar/dark/devriserLogoDark.png"
- 
+import services_light from "../assets/navbar/dark/service.png";
+import light_icon from "../assets/navbar/dark/dark.png";
+import contact_light from "../assets/navbar/dark/contactUs.png";
+import blog_light from "../assets/navbar/dark/blogs.png";
+import sol_light from "../assets/navbar/dark/solutions.png";
+import about_light from "../assets/navbar/dark/aboutUs.png";
+import devriser_logo_light from "../assets/navbar/dark/devriserLogoDark.png";
+
 import { Typography } from "@mui/material";
 import usa from "../assets/navbar/FlagImg/usaflagimg.png";
 import china from "../assets/navbar/FlagImg/chinaflagimg.png";
 import france from "../assets/navbar/FlagImg/franceflagimg.png";
 import arabic from "../assets/navbar/FlagImg/arabic.png";
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 import { useGlobalContext } from "app/components/common/store";
 import Navbar_mobile from "./Navbar_mobile";
-
 
 const Navbar = () => {
   const [sideBarContent, setSideBarContent] = useState([]);
   const [hover, setBgHover] = useState("");
   const [languageTag, setLanguageTag] = useState(false);
   const [navigatePage, setNavigatePage] = useState("");
-const router=useRouter()
+  const router = useRouter();
   const {
     theme,
     setTheme,
@@ -50,11 +49,16 @@ const router=useRouter()
   } = useGlobalContext();
 
   const navArr = [
-    { id: 0, name: "", icon:!theme?DevriserLogo:devriser_logo_light, content: [] },
+    {
+      id: 0,
+      name: "",
+      icon: !theme ? DevriserLogo : devriser_logo_light,
+      content: [],
+    },
     {
       id: 1,
       name: "Services",
-      icon:!theme? Service:services_light,
+      icon: !theme ? Service : services_light,
       content: [
         {
           id: 9,
@@ -77,10 +81,25 @@ const router=useRouter()
         },
       ],
     },
-    { id: 2, name: "Solutions", icon:!theme? Solution:sol_light, content: [] },
-    { id: 3, name: "Blog", icon:!theme? Blog:blog_light, content: [] },
-    { id: 4, name: "Contact", icon:!theme? Contact:contact_light, content: [] },
-    { id: 5, name: "About Us", icon:!theme? About:about_light, content: [] },
+    {
+      id: 2,
+      name: "Solutions",
+      icon: !theme ? Solution : sol_light,
+      content: [],
+    },
+    { id: 3, name: "Blog", icon: !theme ? Blog : blog_light, content: [] },
+    {
+      id: 4,
+      name: "Contact",
+      icon: !theme ? Contact : contact_light,
+      content: [],
+    },
+    {
+      id: 5,
+      name: "About Us",
+      icon: !theme ? About : about_light,
+      content: [],
+    },
   ];
 
   const handleNavbarClick = (elm) => {
@@ -107,27 +126,29 @@ const router=useRouter()
       flagImg: china,
       country: "中文",
     },
-   
+
     {
-      id:4,
-      flagImg:arabic,
-      country:'العربية'
-    }
+      id: 4,
+      flagImg: arabic,
+      country: "العربية",
+    },
   ];
   const handelLanguageTag = () => {
     setLanguageTag(true);
   };
 
-  const handelRoute=(path)=>{
-    router.push(path)
-    setShowSidebar(false)
-  }
-
+  const handelRoute = (path) => {
+    router.push(path);
+    setShowSidebar(false);
+  };
 
   return (
     <>
-    <div className="main-navbar-container _nav-1"  >
-        <nav className="navbar">
+      <div className="main-navbar-container _nav-1">
+        <nav
+          className="navbar"
+          style={{ backgroundColor: theme ? "#D1CBC8" : "#2D2F31" }}
+        >
           <div className="navbar-child1">
             {navArr.map((elm) => {
               return (
@@ -146,18 +167,23 @@ const router=useRouter()
                   <Image
                     className="navbar-child1-subchild-img"
                     src={elm.icon}
+                    alt="icon"
                   />
-                  <p className="navbar-child1-subchild-text"  style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.name}</p>
+                  <p
+                    className="navbar-child1-subchild-text"
+                    style={{ color: theme ? "#2A2A2A" : "#FFFFFF" }}
+                  >
+                    {elm.name}
+                  </p>
                 </div>
               );
             })}
           </div>
           <div className="navbar-child2">
-            <div onClick={()=>setTheme((prev)=>!prev)}  >
+            <div onClick={() => setTheme((prev) => !prev)}>
               <Image
                 className="navbar-child1-subchild-img  "
-          
-                src={!theme?Light:light_icon}
+                src={!theme ? Light : light_icon}
                 alt="themeToggle"
               />
             </div>
@@ -165,7 +191,7 @@ const router=useRouter()
               <Button
                 className="navbar-child2-subchild2"
                 onClick={handelLanguageTag}
-                style={{color:theme?'#2A2A2A':'#FFFFFF'}}
+                style={{ color: theme ? "#2A2A2A" : "#FFFFFF" }}
               >
                 Eng
               </Button>
@@ -177,24 +203,31 @@ const router=useRouter()
             <div className="mainContainer-navbar2-show">
               {sideBarContent.map((elm, i) => {
                 return (
-                  <div onClick={()=>handelRoute(elm.routePath)} key={i}   className="navbar2-show-content">
-                   <Typography  style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.routeName}</Typography>
+                  <div
+                    onClick={() => handelRoute(elm.routePath)}
+                    key={i}
+                    className="navbar2-show-content"
+                  >
+                    <Typography
+                      style={{ color: theme ? "#2A2A2A" : "#FFFFFF" }}
+                    >
+                      {elm.routeName}
+                    </Typography>
                   </div>
                 );
               })}
             </div>
           ) : (
             <div className="mainContainer-navbar2-show-language">
-            
               {languageFlagArr.map((elm) => {
                 return (
-                  <div
-                    key={elm.id}
-                    className="navbar2-show-content-language"
-                    
-                  >
-                    <Image src={elm.flagImg} />
-                    <Typography   style={{color:theme?'#2A2A2A':'#FFFFFF'}}>{elm.country}</Typography>
+                  <div key={elm.id} className="navbar2-show-content-language">
+                    <Image src={elm.flagImg} alt="flag_img" />
+                    <Typography
+                      style={{ color: theme ? "#2A2A2A" : "#FFFFFF" }}
+                    >
+                      {elm.country}
+                    </Typography>
                   </div>
                 );
               })}
@@ -202,9 +235,10 @@ const router=useRouter()
           )}
         </nav>
       </div>
-      <div className="_nav-2"><Navbar_mobile/></div>
+      <div className="_nav-2">
+        <Navbar_mobile />
+      </div>
     </>
-            
   );
 };
 
