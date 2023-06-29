@@ -5,6 +5,7 @@ import darkIllustration from "../../../assets/illustration/laptopdarkillustratio
 import Avatar from "../../../assets/illustration/avatar.png";
 import Webdevelopmentillustration from "../../../assets/illustration/Web development illustration 2.png";
 import Weboffring from "../../../assets/illustration/OFFering ilustration.png";
+import ArrowDevriser from "../../../assets/illustration/arrowDevriser.png";
 import Image from "next/image.js";
 import React, { useEffect, useState } from "react";
 import "./webdevelopment.css";
@@ -26,13 +27,13 @@ const WebDevelopment = () => {
     fontWeight: "bold",
     marginBottom: "10px",
     color: "white",
+    marginTop: "50px",
+    marginBottom: "30px",
   };
-
   const iconContainerStyles = {
     display: "flex",
     justifyContent: "space-between",
     maxWidth: "100%",
-    height: "108px",
     margin: "auto",
     textAlign: "center",
     justifyContent: "space-between",
@@ -43,7 +44,6 @@ const WebDevelopment = () => {
     backgroundColor: "#FFF",
     backdropFilter: "blur(22px)",
   };
-
   const iconStyles = {
     width: "50px",
     height: "50px",
@@ -161,150 +161,239 @@ const WebDevelopment = () => {
   return (
     <div className="container" onClick={() => setShowSidebar(false)}>
       <div className="main-container">
-          <div className="_hero-section-container" id="hero-section-pattern-web">
-            <div className="_hero-section-container-primary">
-              <div className="_hero-section-container-primary-child1">
-                <h2 className="_hero-section-container-primary-child1-text1">
-                
-                  <span className="text-color-web">
-                    Custom Website Development Services
-                  </span>{" "}
-                  That Transcend Boundaries
-                </h2>
-                <p className="_hero-section-container-primary-child1-text2">
-                  {" "}
-                  Experience the power of tailored solutions with our custom
-                  website development services. Our team of expert developers is
-                  committed to crafting visually stunning, highly functional,
-                  and performance-optimized custom websites
-                </p>
-                <div>
-              
-                  <Button className="_hero-section-container-primary-btn" sx={{
-      background: 'var(--final-web-color, linear-gradient(145deg, #5016CC 0%, #F7A1D0 100%))'
-      }} >
-                    Let's Begin
-                  
-                  </Button>
-                </div>
-              </div>
-              <div className="_hero-section-container-primary-child2">
-                <Image width={"100%"} src={Webdevelopmentillustration} />
+        <div className="_hero-section-container" id="hero-section-pattern-web">
+          <div className="_hero-section-container-primary">
+            <div className="_hero-section-container-primary-child1">
+              <h2 className="_hero-section-container-primary-child1-text1">
+                <span className="text-color-web">
+                  Custom Website Development Services
+                </span>{" "}
+                That Transcend Boundaries
+              </h2>
+              <p className="_hero-section-container-primary-child1-text2">
+                {" "}
+                Experience the power of tailored solutions with our custom
+                website development services. Our team of expert developers is
+                committed to crafting visually stunning, highly functional, and
+                performance-optimized custom websites
+              </p>
+              <div>
+                <Button
+                  className="_hero-section-container-primary-btn"
+                  sx={{
+                    background:
+                      "var(--final-web-color, linear-gradient(145deg, #5016CC 0%, #F7A1D0 100%))",
+                  }}
+                >
+                  Let's Begin
+                </Button>
               </div>
             </div>
+            <div className="_hero-section-container-primary-child2">
+              <Image width={"100%"} src={Webdevelopmentillustration} />
+            </div>
           </div>
-          <div className="_primary-long-card">
-            <h2 className="_primary-long-card-text1">
-              Ignite Your Online Presence With Custom Made Website 
-            </h2>
-            <p className="_primary-long-card-text2">
-              Experience the power of custom website development with DevRiser.
-              Our team specializes in crafting unique websites that reflect your
-              brand, capture your vision, and achieve your business goals. We
-              build websites from scratch and create a standout online presence
-              for your business. Whether you need a simple static website or a
-              feature-rich dynamic platform, our expertise has got you covered
-            </p>
-          </div>
-          {/*  flex  reverxse container here */}
+        </div>
+        <div className="_primary-long-card">
+          <h2 className="_primary-long-card-text1">
+            Ignite Your Online Presence With Custom Made Website 
+          </h2>
+          <p className="_primary-long-card-text2">
+            Experience the power of custom website development with DevRiser.
+            Our team specializes in crafting unique websites that reflect your
+            brand, capture your vision, and achieve your business goals. We
+            build websites from scratch and create a standout online presence
+            for your business. Whether you need a simple static website or a
+            feature-rich dynamic platform, our expertise has got you covered
+          </p>
+        </div>
+        {/*  flex  reverxse container here */}
+        <div className="our-offering-container-web">
+          <h2>Our Offrings</h2>
           <div
             style={{
               margin: "auto",
+              display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              paddingLeft: "10%",
-              paddingRight: "3%",
-              border: "1px solid red",
             }}
           >
-            <h2>Our Offrings</h2>
+            <Image
+              id="our-offering-container-image-web"
+              src={Weboffring}
+              alt="webdevelopment types"
+            />
+            <div style={{ position: "absolute", color: "white" }}>
+              <section className="our-offering-container-section1-text-web">
+                <span>Educational Platforms</span>
+                <span>E-commerce Stores</span>
+                <span>Corporate Hub</span>
+                <span>Portfolio Gallery</span>
+                <span>Blogging Websites</span>
+              </section>
+              <section className="our-offering-container-section2-text-web">
+                <span>News & media portal</span>
+                <span>Community & social networking</span>
+                <span>Booking and reservation</span>
+                <span>Real estate Websites</span>
+                <span>Non-profit forum</span>
+              </section>
+              <section className="our-offering-container-section3-text-web">
+                <span>Static website</span>
+                <span>Dynamic website</span>
+              </section>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "70%",
+              borderRadius: "2px",
+              backgroundColor: "#F6F6F6",
+              width: "100%",
+              display: "flex",
+              margin: "auto",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "0px 20px 0px 20px",
+            }}
+          >
             <div
               style={{
-                margin: "auto",
-                display: "flex",
-                border: "1px solid red",
-                alignItems: "center",
-                justifyContent: "center",
+                height: "70px",
+                width: "164px",
+                borderRadius: "9px",
+                backgroundColor: "#2B2B2B",
+                justifyContent: "space-between",
               }}
-            >
-              <Image
-                width={"500px"}
-                height={"500px"}
-                src={Weboffring}
-                alt="webdevelopment types"
-                margin="auto"
-              />
-            </div>
+            ></div>
+
             <div
               style={{
                 width: "70%",
-                borderRadius: "2px",
-                backgroundColor: "#F6F6F6",
-                width: "1004px",
-                height: "235px",
-                display: "flex",
+                height: "auto",
                 margin: "auto",
-                justifyContent: "space-between",
+                display: "flex",
                 alignItems: "center",
-                padding: "0px 20px 0px 20px",
+                color: "#2A2A2A",
               }}
             >
-              <div
-                style={{
-                  height: "56px",
-                  width: "164px",
-                  borderRadius: "9px",
-                  backgroundColor: "#2B2B2B",
-                  justifyContent: "space-between",
-                }}
-              ></div>
-
-              <div
-                style={{
-                  width: "778px",
-                  height: "202px",
-                  margin: "auto",
-                  display: "flex",
-                  alignItems: "center",
-                  color: "#2A2A2A",
-                }}
-              >
-                <p>
-                  Static websites are ideal for content-driven platforms with
-                  infrequent updates, providing fast loading times, enhanced
-                  security, and cost-effective solutions, making them suitable
-                  for portfolios, informational sites, landing pages, and
-                  brochures
-                </p>
-              </div>
+              <p>
+                Static websites are ideal for content-driven platforms with
+                infrequent updates, providing fast loading times, enhanced
+                security, and cost-effective solutions, making them suitable for
+                portfolios, informational sites, landing pages, and brochures
+              </p>
             </div>
           </div>
+        </div>
 
-          <div className="webdevlopment-container3">
-            <div className="webdeelopment-container3-child1"></div>
-          </div>
+        <div className="webdevlopment-container3">
+          <div className="webdeelopment-container3-child1"></div>
+        </div>
 
+        {/* cart compo start here */}
+
+        <div className="online-presence-container-web">
           <div>
-            <h2
-              style={tectnologyHeadingStyles}
-              className="web-developement-our-technology-heading"
-            >
-              Our Technology Stack
+            <h2 className="online-presence-container1-heading-web">
+              Experience The Impact Of Custom Made Websites
             </h2>
-
-            {sections.map((section, index) => (
-              <div key={index} style={sectionStyles}>
-                <h2 style={headingStyles}>{section.title}</h2>
-                <div style={iconContainerStyles}>
-                  {section.icons.map((icon, iconIndex) => (
-                    <div key={iconIndex} style={iconStyles}>
-                      {icon}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
+          <div className="online-presence-container2-web">
+            <section className="online-presence-container2-section1-web">
+              <h3 className="online-presence-container2-section1-subheading-web">
+                Stand out from the crowd
+              </h3>
+              <p className="online-presence-container2-section1-subtext-web">
+                Standing out from the competition is essential in a world filled
+                with countless websites. With our custom website development
+                services, we create a website for your business that truly
+                represents your brand. At DevRiser, our experts tailor the
+                designs and aesthetics to match your unique identity which
+                ensures that your website visitors have a memorable experience
+              </p>
+            </section>
+            <section className="online-presence-container2-section2-web"></section>
+            <section className="online-presence-container2-section2-web"></section>
+            <section className="online-presence-container2-section1-web">
+              <h3 className="online-presence-container2-section1-subheading-web">
+                Personalized functionality
+              </h3>
+              <p className="online-presence-container2-section1-subtext-web">
+                Off-the-shelf website builders may limit your options for
+                functionality. However, with our custom website development, you
+                have complete control. We build features and functionalities
+                specific to your business requirements. You get whatever feature
+                you think of with DevRiser
+              </p>
+            </section>
+
+            <section className="online-presence-container2-section1-web">
+              <h3 className="online-presence-container2-section1-subheading-web">
+                Progressive web apps
+              </h3>
+              <p className="online-presence-container2-section1-subtext-web">
+                With PWAs, we combine the best of both worlds, we offer the
+                convenience of being accessible through a web browser while also
+                providing the option to be installed and launched directly to
+                your device. PWAs bridge the gap between websites and
+                traditional mobile apps, providing users with the ability to
+                access their favorite websites however they like
+              </p>
+            </section>
+            <section className="online-presence-container2-section2-web"></section>
+            <section className="online-presence-container2-section2-web"></section>
+            <section className="online-presence-container2-section1-web">
+              <h3 className="online-presence-container2-section1-subheading-web">
+                Improved search engine
+              </h3>
+              <p className="online-presence-container2-section1-subtext-web">
+                Search engine visibility is vital for attracting organic traffic
+                to your website. Our custom website development services enable
+                you to implement SEO best practices right from the start. By
+                optimizing your site's structure, content, and metadata, you can
+                increase the chances of ranking higher, driving organic traffic,
+                and expanding your online presence
+              </p>
+            </section>
+
+            <section className="online-presence-container2-section1-web">
+              <h3 className="online-presence-container2-section1-subheading-web">
+                Website performance
+              </h3>
+              <p className="online-presence-container2-section1-subtext-web">
+                Website performance plays a crucial role in user experience. In
+                DevRiser we create Custom made websites that allow optimized
+                code and reduces unnecessary bloat that can slow down your
+                website. With a streamlined and efficient website, visitors can
+                enjoy fast loading times and easy navigation, resulting in a
+                positive user experience
+              </p>
+            </section>
+            <section className="online-presence-container2-section2-web"></section>
+          </div>
+        </div>
+        <div>
+          <h2
+            style={tectnologyHeadingStyles}
+            className="web-developement-our-technology-heading"
+          >
+            Our Technology Stack
+          </h2>
+
+          {sections.map((section, index) => (
+            <div key={index} style={sectionStyles}>
+              <h2 style={headingStyles}>{section.title}</h2>
+              <div style={iconContainerStyles}>
+                {section.icons.map((icon, iconIndex) => (
+                  <div key={iconIndex} style={iconStyles}>
+                    {icon}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
         <div
           className="_crousal-container"
           style={theme ? lightTheme : darkTheme}
@@ -329,30 +418,87 @@ const WebDevelopment = () => {
             style={theme ? lightTheme : darkTheme}
           >
             <div className="_big-card-container-child1">
-              <div className="_big-card-container-child1-item">
-                Consultation and gathering requirements
+              <div className="_big-card-container-child1-item text-color-web">
+                <span> Consultation and gathering requirements </span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                Research and planning
+                <span>Research and planning</span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                Wireframing and design
+                <span> Wireframing and design</span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                Development of website
+                <span> Development of website </span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                Content integration
+                <span>Content integration</span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                User training
+                <span> User training </span>
+
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
-              <div className="_big-card-container-child1-item">Staging</div>
               <div className="_big-card-container-child1-item">
-                Deployment and launch
+                <span> Staging</span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
               <div className="_big-card-container-child1-item">
-                Post-launch support
+                <span>Deployment and launch</span>
+                <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
+              </div>
+              <div className="_big-card-container-child1-item">
+                <span>Post-launch support</span>
+                <div>
+                  <Image
+                    className="why-chose-us-arrow-web"
+                    src={ArrowDevriser}
+                  />
+                </div>
               </div>
             </div>
             <div className="_big-card-container-child2">
