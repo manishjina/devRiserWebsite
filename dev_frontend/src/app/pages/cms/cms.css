@@ -1,29 +1,27 @@
 #hero-section-pattern {
-  position: relative;
+  position:absolute;
+  top:0px;
+  left:-100px;
+background-size: 200px 200px;  
+height: 450px;
+pointer-events: none;
 
-  background: url(../../../assets/illustration/pentagonPatternDark.png);
-  background-repeat: no-repeat;
-  background-position-x: 100px;
+
+
 }
 
-#hero-section-pattern::after {
-  content: "";
-  position: absolute;
-
-  display: block;
-  background-color: #090a0b;
-
-  z-index: -1;
-}
 
 .container-gradient {
-  position: absolute;
+ flex:1;
   background: #ed958d;
   height: 200px;
   width: 300px;
-  top: 0;
-  left: 0;
-  filter: blur(90px);
+  top:-10px;
+  left: -100px;
+  filter: blur(120px);
+  position: absolute;
+  pointer-events: none;
+
 }
 
 .text-color {
@@ -39,7 +37,7 @@
 
   align-items: center;
   justify-content: center;
-  padding-left: 10%;
+  padding-left:3%;
   padding-right: 3%;
 }
 .cms-container-box5-text {
@@ -101,7 +99,7 @@
   margin: auto;
   padding-top: 100px;
   position: relative;
-  padding-left: 15%;
+  padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
 }
@@ -111,11 +109,12 @@
   background: #ed958d;
 
   filter: blur(110px);
-  top: 10px;
-  height: 40%;
+ 
+  height: 20%;
   width: 30%;
   right: -50px;
-  top: 0px;
+  top:100px;
+  
 }
 
 .cms-container-box6-child1 > h2 {
@@ -163,17 +162,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 55px;
   padding-top: 50px;
   justify-content: space-between;
-  background: url(../../../assets/illustration/cmsBranch.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: 95px;
+  /* background: url(../../../asset1/line_connectors_lg.svg); */
 
-  padding-left: 10%;
-  padding-right: 6%;
+
+
+  padding-left: 3%;
+  padding-right: 3%;
+  position: relative;
 }
+
+
+
+#line-connector{
+  position: absolute;
+top: 100px;
+}
+
 .cms-container-box7-text {
   font-weight: 600;
   font-size: 36px;
@@ -228,7 +235,7 @@
   text-align: center;
   justify-content: center;
   position: relative;
-  padding-left: 10%;
+  padding-left: 3%;
   padding-right: 3%;
 }
 .cms-container-box8-gradient {
@@ -291,12 +298,22 @@
   right: -40px;
   top: 100px;
 }
+#costeffective{
+  
+  width:40%;
+}
+.secondary-long-card-btn-text{
+  background: linear-gradient(.25turn, rgba(237, 149, 141, 1) ,rgba(205, 27, 251, 1) );
 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 @media only screen and (max-width: 1300px) {
   .cms-container-box5 {
     padding-top: 80px;
-    padding-left: 10%;
-    padding-right: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   .cms-container-box5-text {
     font-size: 34px;
@@ -333,8 +350,8 @@
     background-position-y: 95px;
     background-position-x: 70%;
     width: 95%;
-    padding-left: 10%;
-    padding-right: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   .cms-container-box7-text {
     font-weight: 600;
@@ -392,7 +409,7 @@
     text-align: center;
     justify-content: center;
     position: relative;
-    padding-left: 10%;
+    padding-left: 3%;
     padding-right: 3%;
   }
   .cms-container-box8-child1 {
