@@ -7,17 +7,42 @@ import Webdevelopmentillustration from "../../../assets/illustration/Web develop
 import Weboffring from "../../../assets/illustration/OFFering ilustration.png";
 import ArrowDevriser from "../../../assets/illustration/arrowDevriser.png";
 import Image from "next/image.js";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./webdevelopment.css";
 import Carousel from "../../../components/Carousel";
-import { ourProcessDataBlack, ourProcessDataWhite } from "./webdevelopmentdata";
+import {
+  faqContent,
+  ourProcessData,
+  ourProcessDataBlack,
+  ourProcessDataWhite,
+  sections,
+} from "./webdevelopmentdata";
 import Faq from "../../../components/Faq";
 const WebDevelopment = () => {
   const [contentData, setContent] = useState(ourProcessDataBlack[0].content);
   const [contentImg, setContentImg] = useState(ourProcessDataBlack[0].img);
   const [btnColor, setBtnColour] = useState(0);
+  const [ourProcessId, setOurProcessId] = useState(1);
+  const [text, setText] = useState("");
   const { showSidebar, setShowSidebar, theme, setTheme } = useGlobalContext();
   const [data, setData] = useState([]);
+  const containerRef = useRef(null);
+
+  const handleClick = (item) => {
+    const container = containerRef.current;
+    const itemElement = container.querySelector(`[data-id="${item.id}"]`);
+
+    if (itemElement) {
+      const scrollTop = container.scrollTop;
+      const containerHeight = container.clientHeight;
+      const itemOffsetTop = itemElement.offsetTop;
+      const itemHeight = itemElement.offsetHeight;
+
+      if (itemOffsetTop + itemHeight > scrollTop + containerHeight) {
+        container.scrollTop = itemOffsetTop + itemHeight - containerHeight;
+      }
+    }
+  };
   const sectionStyles = {
     width: "60%",
     margin: "auto",
@@ -59,32 +84,6 @@ const WebDevelopment = () => {
     fontWeight: "600",
     lineHeight: "52px",
   };
-  const sections = [
-    {
-      title: "Frontend",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-    {
-      title: "Backend",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-    {
-      title: "Clouds",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-    {
-      title: "Database",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-    {
-      title: "Testing Automation",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-    {
-      title: "Security",
-      icons: ["Icon 1", "Icon 2", "Icon 3", "Icon 4", "Icon 5"],
-    },
-  ];
   const content = [
     "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it",
     "I Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
@@ -104,7 +103,9 @@ const WebDevelopment = () => {
     setContent(ele.content);
     setContentImg(ele.img);
   };
-
+  const handleSetData = (data) => {
+    setText(data);
+  };
   const handleMouseMove = (index, event) => {
     const rect = event.target.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
@@ -119,29 +120,6 @@ const WebDevelopment = () => {
     });
   };
 
-  const faqContent = [
-    {
-      question: "Why should I invest in custom website development services ?",
-      ans: "Custom website development ensures a unique online presence  to your brand, offering enhanced functionality, better user experience, and improved search engine visibility.",
-      panel: "1",
-    },
-    {
-      question: "Can I update and manage my custom website myself ?",
-      ans: "The cost for CMS development services can vary depending on several factors, including the complexity of the project, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required. It is essential to discuss your project requirements and goals to get an accurate estimate of the cost involved.",
-      panel: "2",
-    },
-    {
-      question: "Can I update and manage my custom website myself ?",
-      ans: "The time required to create a website can vary based on several factors, including the complexity of the website, the specific CMS platform chosen, the desired features and functionalities, and the level of customization required.",
-      panel: "3",
-    },
-    {
-      question: "Will my custom website be mobile-friendly and responsive ?",
-      ans: "Yes, we as a CMS development company prioritize the security of your data. We implement robust measures to ensure the confidentiality, integrity, and availability of your information. Rest assured that we follow industry best practices, utilize encryption protocols, and implement secure hosting environments to safeguard your data throughout our website creation process.",
-      panel: "4",
-    },
-  ];
-
   const lightTheme = {
     backgroundColor: "#F6F6F6",
     color: "#2A2A2A",
@@ -149,6 +127,14 @@ const WebDevelopment = () => {
   const darkTheme = {
     backgroundColor: "#090a0b",
     color: "#FFFFFF",
+  };
+  const textItemStyle = {
+    cursor: "pointer",
+    background:
+      "linear-gradient(.25turn, rgba(80, 22, 204, 1), rgba(247, 161, 208, 1))",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
   };
 
   useEffect(() => {
@@ -167,8 +153,11 @@ const WebDevelopment = () => {
               <h2 className="_hero-section-container-primary-child1-text1">
                 <span className="text-color-web">
                   Custom Website Development Services
-                </span>{" "}
-                That Transcend Boundaries
+                </span>
+                {""}
+                <span style={{ color: "white", marginLeft: "5px" }}>
+                  That Transcend Boundaries
+                </span>
               </h2>
               <p className="_hero-section-container-primary-child1-text2">
                 {" "}
@@ -180,9 +169,10 @@ const WebDevelopment = () => {
               <div>
                 <Button
                   className="_hero-section-container-primary-btn"
-                  sx={{
+                  style={{
+                    borderRadius: "6px",
                     background:
-                      "var(--final-web-color, linear-gradient(145deg, #5016CC 0%, #F7A1D0 100%))",
+                      "linear-gradient(145deg, #5016CC 0%, #F7A1D0 100%)",
                   }}
                 >
                   Let's Begin
@@ -193,19 +183,6 @@ const WebDevelopment = () => {
               <Image width={"100%"} src={Webdevelopmentillustration} />
             </div>
           </div>
-        </div>
-        <div className="_primary-long-card">
-          <h2 className="_primary-long-card-text1">
-            Ignite Your Online Presence With Custom Made Website 
-          </h2>
-          <p className="_primary-long-card-text2">
-            Experience the power of custom website development with DevRiser.
-            Our team specializes in crafting unique websites that reflect your
-            brand, capture your vision, and achieve your business goals. We
-            build websites from scratch and create a standout online presence
-            for your business. Whether you need a simple static website or a
-            feature-rich dynamic platform, our expertise has got you covered
-          </p>
         </div>
         {/*  flex  reverxse container here */}
         <div className="our-offering-container-web">
@@ -225,48 +202,61 @@ const WebDevelopment = () => {
             />
             <div style={{ position: "absolute", color: "white" }}>
               <section className="our-offering-container-section1-text-web">
-                <span>Educational Platforms</span>
-                <span>E-commerce Stores</span>
-                <span>Corporate Hub</span>
-                <span>Portfolio Gallery</span>
-                <span>Blogging Websites</span>
+                <span onClick={() => handleSetData("Educational Platforms")}>
+                  Educational Platforms
+                </span>
+                <span onClick={() => handleSetData("E-commerce Stores")}>
+                  E-commerce Stores
+                </span>
+                <span onClick={() => handleSetData("Corporate Hub")}>
+                  Corporate Hub
+                </span>
+                <span onClick={() => handleSetData("Portfolio Gallery")}>
+                  Portfolio Gallery
+                </span>
+                <span onClick={() => handleSetData("Blogging Websites")}>
+                  Blogging Websites
+                </span>
               </section>
               <section className="our-offering-container-section2-text-web">
-                <span>News & media portal</span>
-                <span>Community & social networking</span>
-                <span>Booking and reservation</span>
-                <span>Real estate Websites</span>
-                <span>Non-profit forum</span>
+                <span onClick={() => handleSetData("News & media portal")}>
+                  News & media portal
+                </span>
+                <span
+                  onClick={() => handleSetData("Community & social networking")}
+                >
+                  Community & social networking
+                </span>
+                <span onClick={() => handleSetData("Booking and reservation")}>
+                  Booking and reservation
+                </span>
+                <span onClick={() => handleSetData("Real estate Websites")}>
+                  Real estate Websites
+                </span>
+                <span onClick={() => handleSetData("Non-profit forum")}>
+                  Non-profit forum
+                </span>
               </section>
               <section className="our-offering-container-section3-text-web">
-                <span>Static website</span>
-                <span>Dynamic website</span>
+                <span onClick={() => handleSetData("Static website")}>
+                  Static website
+                </span>
+                <span onClick={() => handleSetData("Dynamic website")}>
+                  Dynamic website
+                </span>
               </section>
             </div>
           </div>
-          <div
-            style={{
-              width: "70%",
-              borderRadius: "2px",
-              backgroundColor: "#F6F6F6",
-              width: "100%",
-              display: "flex",
-              margin: "auto",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "0px 20px 0px 20px",
-            }}
-          >
+          <div id="our-offering-container-section4-web">
             <div
               style={{
-                height: "70px",
-                width: "164px",
+                height: "100px",
+                width: "200px",
                 borderRadius: "9px",
                 backgroundColor: "#2B2B2B",
                 justifyContent: "space-between",
               }}
             ></div>
-
             <div
               style={{
                 width: "70%",
@@ -286,18 +276,40 @@ const WebDevelopment = () => {
             </div>
           </div>
         </div>
-
+        <div
+          className="_primary-long-card"
+          id="ignite-online-presense-container-web"
+        >
+          <h2 className="_primary-long-card-text1">
+            Ignite Your Online Presence With Custom Made Website 
+          </h2>
+          <p className="_primary-long-card-text2">
+            Experience the power of custom website development with DevRiser.
+            Our team specializes in crafting unique websites that reflect your
+            brand, capture your vision, and achieve your business goals. We
+            build websites from scratch and create a standout online presence
+            for your business. Whether you need a simple static website or a
+            feature-rich dynamic platform, our expertise has got you covered
+          </p>
+        </div>
         <div className="webdevlopment-container3">
           <div className="webdeelopment-container3-child1"></div>
         </div>
 
-        {/* cart compo start here */}
+        {/* cart section start here */}
 
         <div className="online-presence-container-web">
           <div>
             <h2 className="online-presence-container1-heading-web">
               Experience The Impact Of Custom Made Websites
             </h2>
+            <div className="online-presence-container1-heading2-web">
+              <span>75%</span>
+              <p>
+                Internet Users Determine Business Reliability Solely By Website
+                Design
+              </p>
+            </div>
           </div>
           <div className="online-presence-container2-web">
             <section className="online-presence-container2-section1-web">
@@ -373,14 +385,13 @@ const WebDevelopment = () => {
             <section className="online-presence-container2-section2-web"></section>
           </div>
         </div>
-        <div>
+        <div className="developement-our-technology-container-web">
           <h2
             style={tectnologyHeadingStyles}
-            className="web-developement-our-technology-heading"
+            className="developement-our-technology-heading-web"
           >
             Our Technology Stack
           </h2>
-
           {sections.map((section, index) => (
             <div key={index} style={sectionStyles}>
               <h2 style={headingStyles}>{section.title}</h2>
@@ -406,7 +417,6 @@ const WebDevelopment = () => {
             <Carousel content={content} photo={photo} name={name} desc={desc} />
           </div>
         </div>
-
         <div
           className="_tertiory-section-container"
           style={theme ? lightTheme : darkTheme}
@@ -417,113 +427,49 @@ const WebDevelopment = () => {
             className="_big-card-container"
             style={theme ? lightTheme : darkTheme}
           >
-            <div className="_big-card-container-child1">
-              <div className="_big-card-container-child1-item text-color-web">
-                <span> Consultation and gathering requirements </span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
+            <div className="_big-card-container-child1-web" ref={containerRef}>
+              {/* our process data maped here */}
+              {ourProcessData.map((item) => (
+                <div
+                  onClick={() => {
+                    handleClick(item);
+                    setOurProcessId(item.id);
+                  }}
+                  ref={containerRef}
+                  className="_big-card-container-child1-item"
+                >
+                  <span style={ourProcessId == item.id ? textItemStyle : null}>
+                    {item.title}
+                  </span>
+                  <div className="_big-card-container-child1-item-arrow-icon-container-web">
+                    <Image
+                      className="why-chose-us-arrow-web"
+                      src={ArrowDevriser}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span>Research and planning</span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span> Wireframing and design</span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span> Development of website </span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span>Content integration</span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span> User training </span>
-
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span> Staging</span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span>Deployment and launch</span>
-                <div className="_big-card-container-child1-item-arrow-icon-container-web">
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
-              <div className="_big-card-container-child1-item">
-                <span>Post-launch support</span>
-                <div>
-                  <Image
-                    className="why-chose-us-arrow-web"
-                    src={ArrowDevriser}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
-            <div className="_big-card-container-child2">
-              Gain insights and establish project scope through consultation. We
-              gather the required information and ensure that we create a
-              website that aligns with your business goals, target audience,
-              desired features, design aesthetics, and technical considerations
+            <div className="_big-card-container-child2-web">
+              <p>{ourProcessData[ourProcessId - 1].description}</p>
             </div>
           </div>
         </div>
-
-        <div className="_secondary-long-card">
+        <div style={{ background: "#5016CC" }} className="_secondary-long-card">
           <h2 className="_secondary-long-card-text">
             Ready For A Website That Sets You Apart?
           </h2>
-          <Button className="_secondary-long-card-btn">
+          <Button
+            style={{ color: "#5016CC", width: "auto" }}
+            className="_secondary-long-card-btn"
+          >
             Request a Consultation
           </Button>
         </div>
-
         <div className="_faq-container" style={theme ? lightTheme : darkTheme}>
           <h2 className="_faq-container-child1">
             Frequently <span className="text-color-web">Asked</span> Questions
           </h2>
-
           <div className="_faq-container-child2">
             <Faq faqContent={faqContent} />
           </div>
